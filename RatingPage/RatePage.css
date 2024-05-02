@@ -1,0 +1,139 @@
+body::before {
+  content: "";
+  background-image: url("../Header/14731376_rm222batch5-mind-033.png");
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(1px);
+  transform: scaleY(-1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.main-content {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 500px;
+  height: 280px;
+  overflow-y: auto;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  margin-top: 3%;
+}
+
+.Appointment-list {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background-color: white;
+  overflow-y: auto;
+  text-align: center;
+  margin: auto;
+
+}
+
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+}
+
+
+.table-header {
+  padding: 10px 7px;
+  font-size: large;
+  text-align: center;
+  background-color: #C7CEDB;
+
+}
+
+.table-header span {
+  padding: 0 60px 0 0;
+}
+
+#ratingForm {
+  display: none;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fefefe;
+  border: 1px solid #888;
+  padding: 10px;
+  z-index: 9999;
+  width: 700px;
+  height: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.modal-content {
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  font-weight: bold;
+  font-size: medium;
+
+}
+
+.rating-form label {
+  padding: 10px 0px 10px 0px;
+  margin-right: 65px;
+
+
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="radio"] {
+  padding: 5px 0px 5px 0px;
+  float: center;
+}
+
+.submit-rating {
+  background-color: #011638;
+  color: #fff;
+  border: none;
+  margin-left: 40%;
+  padding: 5px;
+  width: 110px;
+  height: 30px;
+  font-weight: bold;
+}
+
+.rating-button {
+  background-color: #011638;
+  /* Same background color as the Cancel button */
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 65px;
+}
+
+.rating-button:hover,
+.submit-rating:hover {
+  background-color: #13489d;
+  /* Darker shade on hover */
+}

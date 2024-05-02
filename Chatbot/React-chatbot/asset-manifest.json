@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Code/Chatbot/React-chatbot/static/css/main.c7601f7e.css",
+    "main.js": "/Code/Chatbot/React-chatbot/static/js/main.5b8793c4.js",
+    "static/js/453.ed3810f9.chunk.js": "/Code/Chatbot/React-chatbot/static/js/453.ed3810f9.chunk.js",
+    "static/media/Web Banner Guide.pdf": "/Code/Chatbot/React-chatbot/static/media/Web Banner Guide.0af0cb7e8913912c56a8.pdf",
+    "static/media/User Guide.pdf": "/Code/Chatbot/React-chatbot/static/media/User Guide.ed65bbc68f3633920512.pdf",
+    "static/media/AAU_AD.jpg": "/Code/Chatbot/React-chatbot/static/media/AAU_AD.f83d468dffd0515c3f41.jpg",
+    "static/media/add-course.png": "/Code/Chatbot/React-chatbot/static/media/add-course.239fe01dc65493ec56be.png",
+    "static/media/term-amount.png": "/Code/Chatbot/React-chatbot/static/media/term-amount.7d13c9ca31a8d2a6310d.png",
+    "static/media/chatbot icon.png": "/Code/Chatbot/React-chatbot/static/media/chatbot icon.859cffd6447c73e99258.png",
+    "static/media/pay-button.png": "/Code/Chatbot/React-chatbot/static/media/pay-button.1cf10f8c920649e3dfc1.png",
+    "static/media/pay-now.png": "/Code/Chatbot/React-chatbot/static/media/pay-now.13e49ea4ae7e7baccd54.png",
+    "index.html": "/Code/Chatbot/React-chatbot/index.html",
+    "main.c7601f7e.css.map": "/Code/Chatbot/React-chatbot/static/css/main.c7601f7e.css.map",
+    "main.5b8793c4.js.map": "/Code/Chatbot/React-chatbot/static/js/main.5b8793c4.js.map",
+    "453.ed3810f9.chunk.js.map": "/Code/Chatbot/React-chatbot/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c7601f7e.css",
+    "static/js/main.5b8793c4.js"
+  ]
+}

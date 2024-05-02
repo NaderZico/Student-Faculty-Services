@@ -1,0 +1,84 @@
+body::before {
+  content: "";
+  background-image: url("../Header/14731376_rm222batch5-mind-03.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(1px);
+  transform: rotate(180deg);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container {
+  background-color: white;
+  width: 600px;
+  padding: 20px;
+  margin: auto; 
+  margin-top: 50px; 
+  border-radius: 10px;
+  text-align: center;
+}
+
+.message {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: #13489d;
+}
+
+.error-message {
+  color: rgb(213, 0, 0);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #011638;
+  color: #fff;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+.cancel-btn {
+  color: white;
+  border: 2px solid rgb(204, 3, 3);
+  background-color: rgb(204, 3, 3);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: rgb(246, 74, 74);
+  color: white;
+  border: 2px solid rgb(246, 74, 74) ;
+}
+.hidden-slot-id {
+  display: none;
+}
+
+.description-text {
+  margin-top: -10px;
+}

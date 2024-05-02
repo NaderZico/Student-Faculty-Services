@@ -1,0 +1,142 @@
+body::before {
+  content: "";
+  background-image: url("../Header/14731376_rm222batch5-mind-03.png");
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(1px);
+  transform: scaleY(-1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+
+.field1, .field2 {
+  margin-bottom: 20px;
+  text-align: center;
+  display: inline-block;
+  margin-left: 4%;
+  margin-top: 2%;
+  width: 40%; /* Adjust width as needed */
+  padding-bottom: 10px;
+  position: absolute;
+}
+.field2{
+margin-top: 11%;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 77vh;
+}
+
+.form {
+  background-color: white;
+  width: 600px;
+  height: 380px;
+  padding: 20px;
+}
+
+label {
+  text-align: center;
+  font-size: 20px;
+  color: #011638;
+}
+
+.faculty-list,
+.faculty-search,
+.select-slot {
+  width: 80%;
+  height: 30px;
+  padding: 5px;
+  font-size: 16px;
+  background-color: white;
+  color: #333;
+  margin-top: 3px;
+}
+.faculty-search,
+.select-slot {
+  border: 1px solid #ccc;
+}
+.select-slot {
+  font-size: 18px;
+  height: 40px;
+  width: 82%;
+}
+.faculty-list {
+  width: 83%;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: none;
+}
+.faculty-id option,
+.slot-id option {
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+select option:hover {
+  background-color: #ddd;
+}
+
+.faculty-list,
+.faculty-search,
+.select-slot {
+  max-width: 100%;
+}
+
+.appointment-header,
+.appointment-description {
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+#book-appointment-button {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  background-color: #011638;
+  color: white;
+  width: 250px;
+  margin-left: 14%;
+  height: 40px;
+  font-size: 20px;
+  color: #c7cedb;
+  padding-top: 8px;
+  cursor: pointer;
+  border: none;
+  margin-top:19%;
+  transition: background-color 0.2s ease;
+  position: fixed;
+}
+
+#book-appointment-button:hover {
+  background-color: #c7cedb;
+  color: #011638;
+}
+
+#select-slot-container {
+  display: none;
+}
+
+.message {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: #13489d;
+}
+
+.error-message {
+  color: rgb(213, 0, 0);
+}

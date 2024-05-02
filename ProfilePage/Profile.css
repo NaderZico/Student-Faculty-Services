@@ -1,0 +1,435 @@
+body::before {
+  content: "";
+  background-image: url("../Header/14731376_rm222batch5-mind-035.png");
+  background-size: 150%;
+  background-attachment: fixed;
+  filter: blur(1px);
+  transform: rotate(180deg);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.header{
+  position: fixed;
+}
+.logo {
+  position: fixed;
+  top: 0;
+  right: 2%;
+  height: 90px;
+  width: 120px;
+  margin-top: 6%;
+}
+
+/* Faculty Profile CSS */
+.profile-content {
+  display: flex;
+  margin-left: 7%;
+  margin-top: 1%;
+  /* background-color: #C7CEDB; */
+  position: relative;
+  width: 70%;
+  height: 40%;
+  /* background-color: white; */
+  border-radius: 10px;
+  padding: 20px;
+  width: 60%;
+}
+
+.user-photo,
+.user-photo-student {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  margin-bottom: 20%;
+  
+}
+.user-photo{
+  margin-bottom:-4%;
+  margin-top: -140%;
+}
+
+.personal-details-faculty {
+  display: inline-block;
+  margin-left: 10%;
+  font-size: 1.2rem;
+}
+
+.personal-details-content-faculty {
+  float: left;
+}
+
+.user-details {
+  display: grid;
+  grid-auto-flow: row;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 0;
+  /* Reset margin */
+  padding: 0;
+  /* Reset padding */
+}
+
+.comment-section-faculty {
+  display: block;
+  margin: auto;
+  width: 95%;
+  /* border: 1px solid gray; */
+  max-height: 50vh;
+}
+
+/* Student Profile CSS */
+
+.personal-details-content-student {
+  text-align: left;
+}
+
+.personal-details-student {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+  margin-left: 10%;
+}
+.profile-type {
+  margin-bottom: auto;
+}
+
+.comment-section-student {
+  position: relative;
+  display: flex;
+    margin-top: 4%;
+  margin-left: 2.5%;
+  max-height: 50vh;
+}
+.comment-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width:65.2%;
+  border: 1px solid #001454;
+  margin-top: 4%;
+  margin-bottom: 1%; /* Add margin bottom for spacing */
+  background-color: white;
+  margin-left: -0.3%;
+}
+
+
+.comment-button {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #001454;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.15385;
+  outline: none;
+  padding: 8px 0.8em;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+  border: none;
+width: 10%;
+}
+
+.comment-button:hover,
+.comment-button:focus {
+  background-color: #001454;
+  color: white;
+}
+
+.comment-button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.comment-button:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+.no-comments-message {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.circular-container {
+  display: flex;
+  padding: 5%;
+  margin-left: 0%;
+}
+
+.circular {
+  width: 110px;
+  height: 90px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid #467495;  */
+  border-radius: 50%;
+  background-color: white;
+  padding: 10px;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.word {
+  font-size: 14px;
+  color: #898989;
+}
+
+/*View Profile*/
+.user-photo-view {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  margin-bottom: 20%;
+  margin-top: 35%;
+}
+.profile-type {
+  margin-bottom: auto;
+  white-space: nowrap; /* Add this property to prevent the text from wrapping */
+}
+.personal-details-view-student,
+.personal-details-view-faculty {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+  margin-left: 20%;
+}
+.personal-details-view-faculty {
+  margin-left: 15%;
+}
+.comment-section-view {
+  min-height: 15vh;
+  max-height: 65vh;
+  width: 95%;
+  margin: 40px 18px 0 9px;
+  /* border: 1px solid #001454; */
+  padding: 20px; /* Add padding for better spacing */
+}
+
+.comment-list ,.comment-list-student ,.comment-list-faculty {
+  left: 5px;
+  padding: 5px;
+  overflow-y: auto;
+  overflow-x:hidden;
+  width: calc(100% - 430px); /* Subtracting the padding from the total width */
+  max-height: 50vh;
+  margin-top: -2%;
+  background-color: #00145410;
+}
+.comment-list-student{
+  margin-top: 4%;
+}
+.comment-list-faculty{
+  margin-top: 12%;
+}
+.comment-form {
+  text-align: center;
+  margin-top: 10px;
+  position: sticky; /* Set position to sticky */
+  top: 0; /* Stick to the top of the parent container */
+  background-color: #c7cedb; /* Set a background color to make it distinguishable */
+  z-index: 1; /* Ensure it's above the comment list */
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 7px;
+}
+
+.comment-text {
+  width: 100%;
+  resize: none;
+  padding: 15px 5px 5px 5px;
+  text-align: left;
+  border: none;
+  outline: none;
+
+}
+
+ul.content-comment-list {
+  margin-bottom: auto;
+  padding: 2px 1px 2px 1px;
+  width: 100%;
+}
+
+.content-comment-list > div {
+  border-radius: 7px;
+  /* background-color: white; */
+  margin: 10px;
+}
+.delete-button {
+color: white;
+  padding: 3px 12px;
+  cursor: pointer;
+  border: 2px solid rgb(234, 18, 18) ;
+  background-color: rgb(234, 18, 18);
+  border-radius: 20px;
+}
+
+.delete-button:hover {
+  background-color: rgb(246, 74, 74);
+  color: white;
+  border: 2px solid rgb(246, 74, 74) ;
+}
+/* Style for the edit profile form container */
+#editProfileFormContainer {
+  z-index: 9; 
+  position: absolute; 
+  margin-top: 33%;
+  background-color: white;
+  width: 250px;
+  height: 100px;
+  padding: 20px;
+  bottom: 80%;
+}
+
+/* Style for the edit profile button */
+.editProfileBtn {
+  border: none; /* Remove default border */
+  background: transparent; /* Set background to transparent */
+  padding: 0; /* Remove any padding */
+  z-index: 9;
+}
+
+/* Style for the edit icon */
+.edit_icon ,.edit_icon-faculty {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  margin-left: 60%;
+  margin-bottom: -18%;
+}
+
+.edit_icon-faculty{
+  margin-bottom: 120%;
+
+}
+/* Style for the edit profile form */
+.edit-profile-form {
+  margin-top: 20px;
+}
+
+/* Style for the profile photo upload label */
+.edit-profile-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  margin-top: -5%;
+}
+
+/* Style for the profile photo upload input */
+.edit-profile-input {
+  margin-bottom: 10px;
+}
+
+/* Style for the upload button */
+.edit-profile-submit-btn {
+  display: inline-block;
+  background-color: #003a78;
+  color: #fff;
+  font-weight: bolder;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100px;
+  height: 38px;
+}
+
+/* Hover effect for the upload button */
+.edit-profile-submit-btn:hover {
+  background-color: #004fa3;
+}
+
+/* Style for the remove photo button */
+.edit-profile-remove-btn {
+  display: inline-block;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  width:20px;
+  height: 20px;
+  font-size: 0.7rem;
+}
+
+/* Hover effect for the remove photo button */
+.edit-profile-remove-btn:hover {
+  background-color: #bd2130;
+}
+
+.edit-button{
+  color: white;
+  padding: 3px 12px;
+  cursor: pointer;
+  border: 2px solid rgb(7, 50, 191) ;
+  background-color: rgb(7, 50, 191);
+  border-radius: 20px;
+  margin-right: 2px;
+}
+.edit-button:hover {
+ 
+  border: 2px solid rgb(70, 108, 234);
+  background-color: rgb(70, 108, 234);
+}
+.save-button{
+  color: white;
+  padding: 3px 12px;
+  cursor: pointer;
+  border: 2px solid rgb(0, 115, 52) ;
+  background-color: rgb(0, 115, 52);
+  border-radius: 20px;
+  margin-right: 2px;
+  margin-top: 2px;
+}
+.save-button:hover {
+ 
+  border: 2px solid rgb(50, 150, 95);
+  background-color: rgb(50, 150, 95);
+}
+
+.cancel-button {
+  color: white;
+    padding: 3px 12px;
+    cursor: pointer;
+    border: 2px solid rgb(234, 18, 18) ;
+    background-color: rgb(234, 18, 18);
+    border-radius: 20px;
+    margin-top: 2px;
+
+  }
+  
+  .cancel-button:hover {
+    background-color: rgb(246, 74, 74);
+    color: white;
+    border: 2px solid rgb(246, 74, 74) ;
+  }
