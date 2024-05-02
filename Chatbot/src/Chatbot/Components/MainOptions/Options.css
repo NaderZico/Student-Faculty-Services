@@ -1,0 +1,43 @@
+.options-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.option-button {
+  padding: 0.5rem;
+  border-radius: 25px;
+  /* background: transparent; */
+  border: none;
+  margin: 3px;
+  cursor: pointer;
+  background-color: #52989e;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.option-button:hover {
+  background-color: #8ab1b4;
+}
+
+.option-button:focus {
+  background-color: #617678;
+}
+
+.option-button:first-of-type {
+  font-weight: bold;
+  background-color: transparent;
+  color: black;
+  border: solid 1px #d63842;
+  transition: 0.3s ease;
+}
+
+.option-button:first-of-type:hover {
+  background-color: white;
+  color: #d63842;
+}
+
+.option-button:first-of-type:active {
+  background-color: #d63842;
+  color: white;
+}

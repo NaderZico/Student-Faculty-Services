@@ -1,0 +1,43 @@
+.AAU-widget-header {
+    background-color: #d63842;
+    border-radius: 1px;
+    padding: 6px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.AAU-widget-header a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+    font-size: 1.3rem;
+}
+
+.AAU-widget-header a:hover {
+    color: black;
+}
+
+.AAU-widget-header a:active {
+    color: rgb(217, 217, 217);
+}
+
+.AAU-widget-paragraph {
+    background-color: #f6f6f6;
+    font-size: 0.7rem;
+    padding: 10px;
+    margin: auto;
+    margin-top: -4px;
+    text-align: justify;
+}
+
+.AAU-image {
+    width: 100%;
+    margin: auto;
+}
+
+.AAU-location {
+    border: 0;
+    width: 100%;
+    background-color: white;
+    margin-top: 5px;
+}

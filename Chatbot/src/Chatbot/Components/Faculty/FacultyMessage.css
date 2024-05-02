@@ -1,0 +1,17 @@
+.faculty-widget {
+    padding: 5px;
+    position: relative;
+    margin-left: 0;
+}
+
+.faculty-widget-list {
+    margin: -6px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.faculty-widget-list-item {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+
+}

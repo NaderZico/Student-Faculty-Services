@@ -1,0 +1,30 @@
+.payment-widget-container {
+    position: relative;
+    padding: 2px;
+    background-color: #a3c6c7;
+    border-radius: 5px;
+    text-align: left;
+    margin-left: auto;
+}
+
+.payment-widget-list {
+    margin: 0;
+    padding-left: 20px;
+    /* list-style-type: none; */
+}
+
+.payment-widget-list-item {
+    font-size: 0.85rem;
+    margin: 5px;
+}
+
+.payment-widget-list-item img {
+    border-radius: 5px;
+    margin-left: -6px;
+    margin-top:5px;
+}
+
+.payment-image {
+    width: 100%;
+    margin: auto;
+}

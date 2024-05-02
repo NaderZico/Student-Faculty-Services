@@ -1,0 +1,26 @@
+.general-options-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.general-option-button {
+  padding: 0.5rem;
+  border-radius: 25px;
+  background: transparent;
+  border: solid thin #52989e;
+  margin: 3px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.general-option-button:hover {
+  background-color: #52989e;
+  color: white;
+}
+
+.general-option-button:focus {
+  background-color: #617678;
+  color: white;
+  border: solid thin#617678;
+}
