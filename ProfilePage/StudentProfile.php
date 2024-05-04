@@ -57,7 +57,7 @@ if ($profile_photo) {
 
 <body>
 <div class="profile-content">
-        <img src="../LoginPage/AAU logo.png" alt="logo" class="logo">
+        <!-- <img src="../LoginPage/AAU logo.png" alt="logo" class="logo"> -->
         <div class="user-details"><br><br><br>
             <button class="editProfileBtn" id="editProfileBtn">
             <img src="../ProfilePage/pen icon.jpg" class="edit_icon">

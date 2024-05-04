@@ -1,6 +1,6 @@
 body::before {
   content: "";
-  background-image: url("../Header/14731376_rm222batch5-mind-035.png");
+  background-image: url("../Header/14731376_rm222batch5-mind-03.jpg");
   background-size: 150%;
   background-attachment: fixed;
   filter: blur(1px);
@@ -70,17 +70,14 @@ body::before {
   text-align: center;
   font-size: large;
   font-weight: bold;
-  margin-top: 0;
-  /* Reset margin */
+  margin-top: -40px;
   padding: 0;
-  /* Reset padding */
 }
 
 .comment-section-faculty {
   display: block;
   margin: auto;
   width: 95%;
-  /* border: 1px solid gray; */
   max-height: 50vh;
 }
 
