@@ -81,7 +81,7 @@ if ($profile_photo) {
 
     <div class="profile-content">
         <img src="../LoginPage/AAU logo.png" alt="logo" class="logo">
-        <div class="user-details"><br><br><br>
+        <div class="user-details">
             <button class="editProfileBtn" id="editProfileBtn">
             <img src="../ProfilePage/pen icon.jpg" class="edit_icon-faculty">
                  </button>
@@ -162,7 +162,21 @@ if ($profile_photo) {
 
             </form>
         </div>
+        
     </div>
+    
+        <!-- Include the help modal HTML content -->
+<button class="help-button" onclick="toggleHelp()">
+    <img src="../Header/question mark.jpg" class="help-icon">
+</button>
+
+<!-- Add the help modal container with the modal content -->
+<div class="modal-container" id="helpModalContainer">
+    <div class="modal-content">
+    <?php include "../LoginPage/help.html"; ?>
+    <link rel="stylesheet" href="../LoginPage/help.css">
+</div>
+</div>
     <script>
             // JavaScript to toggle the visibility of the profile photo upload form
             document.getElementById('editProfileBtn').addEventListener('click', function() {

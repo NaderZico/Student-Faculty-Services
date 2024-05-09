@@ -90,9 +90,11 @@ include "../Chatbot/Chatbot.php";
     </div>
 </div>
 
+    
+
 <!-- Rating Form -->
-<div id="ratingForm" class="modal" style="display: none;">
-    <div class="modal-content">
+<div id="ratingForm" class="modal-rate" style="display: none;">
+    <div class="modal-content-rate">
         <span class="close" onclick="closeRatingForm()">&times;</span>
         <h2>Appointment Rating</h2>
         <p>Please rate the following aspects of the appointment:</p>
@@ -126,8 +128,21 @@ include "../Chatbot/Chatbot.php";
             <button class="submit-rating" type="submit" name="submit_rating">Submit Rating</button>
         </form>
     </div>
-</div>
+</div><br><br><br><br><br>
+  
 
+
+        <!-- Include the help modal HTML content -->
+        <button class="help-button" onclick="toggleHelp()">
+    <img src="../Header/question mark.jpg" class="help-icon">
+</button>
+
+<!-- Add the help modal container with the modal content -->
+<div class="modal-container" id="helpModalContainer">
+    <div class="modal-content">
+    <?php include "../LoginPage/help.html"; ?>
+</div>
+</div>
 <script>
     function showRatingForm(appointmentId) {
         // Display the rating form modal
@@ -141,6 +156,8 @@ include "../Chatbot/Chatbot.php";
         // Hide the rating form modal
         document.getElementById('ratingForm').style.display = 'none';
     }
+
+
 </script>
 
 </body>

@@ -57,8 +57,8 @@ if ($profile_photo) {
 
 <body>
 <div class="profile-content">
-        <!-- <img src="../LoginPage/AAU logo.png" alt="logo" class="logo"> -->
-        <div class="user-details"><br><br><br>
+        <img src="../LoginPage/AAU logo.png" alt="logo" class="logo">
+        <div class="user-details">
             <button class="editProfileBtn" id="editProfileBtn">
             <img src="../ProfilePage/pen icon.jpg" class="edit_icon">
                  </button>
@@ -105,7 +105,7 @@ if ($profile_photo) {
             
         </div>
 
-        <div class="comment-form">
+        <div class="comment-form-student">
             <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <?php
                 $receiver_id = isset($_GET['profile_id']) ? intval($_GET['profile_id']) : 0; // Default to 0 if not set or invalid
@@ -125,7 +125,20 @@ if ($profile_photo) {
                 <input type="hidden" name="sender_id" value="<?php echo htmlspecialchars($sender_id); ?>">
             </form>
         </div>
+        
     </div>
+    
+        <!-- Include the help modal HTML content -->
+<button class="help-button" onclick="toggleHelp()">
+    <img src="../Header/question mark.jpg" class="help-icon">
+</button>
+
+<!-- Add the help modal container with the modal content -->
+<div class="modal-container" id="helpModalContainer">
+    <div class="modal-content">
+    <?php include "../LoginPage/help.html";?>
+</div>
+</div>
     <script>
             // JavaScript to toggle the visibility of the profile photo upload form
             document.getElementById('editProfileBtn').addEventListener('click', function() {

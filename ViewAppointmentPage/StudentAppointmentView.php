@@ -102,7 +102,20 @@ $db->close();
                 ?>
             </table>
         </div>
-    </div>
+    </div><br><br>
+               <!-- Include the help modal HTML content -->
+<button class="help-button" onclick="toggleHelp()">
+    <img src="../Header/question mark.jpg" class="help-icon">
+</button>
+
+<!-- Add the help modal container with the modal content -->
+<div class="modal-container" id="helpModalContainer">
+    <div class="modal-content">
+    <?php include "../LoginPage/help.html"; ?>
+    <link rel="stylesheet" href="../LoginPage/help.css">
+</div>
+</div>
+
 
 </body>
 

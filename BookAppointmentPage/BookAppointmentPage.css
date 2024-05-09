@@ -20,7 +20,7 @@ body::before {
   display: inline-block;
   margin-left: 4%;
   margin-top: 2%;
-  width: 40%; /* Adjust width as needed */
+  width: 40%; 
   padding-bottom: 10px;
   position: absolute;
 }

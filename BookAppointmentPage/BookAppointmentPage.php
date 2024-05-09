@@ -17,6 +17,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'student') {
     <title>Appointment Form</title>
     <link rel="stylesheet" href="BookAppointmentPage.css">
 
+
 </head>
 
 <body>
@@ -50,10 +51,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'student') {
                 </div>
                 <input type="hidden" name="faculty_id" id="faculty_id" value="">
                 <input type="hidden" name="slot_id" id="slot_id" value="">
-                 <div class="button">
-                    <button type="submit" id="book-appointment-button" onclick="bookAppointment()">Book
-                        Appointment</button>
-                </div>
+           
                 <div class="message">
                     <?php
                         if (isset($_SESSION['error'])) {
@@ -67,11 +65,30 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'student') {
                    ?>
                 </div>
 
-               
+                <div class="button">
+                    <button type="submit" id="book-appointment-button" onclick="bookAppointment()">Book
+                        Appointment</button>
+                </div>
             </form>
+           
         </div>
+     
     </div>
+
+            <!-- Include the help modal HTML content -->
+<button class="help-button" onclick="toggleHelp()">
+    <img src="../Header/question mark.jpg" class="help-icon">
+</button>
+
+<!-- Add the help modal container with the modal content -->
+<div class="modal-container" id="helpModalContainer">
+    <div class="modal-content">
+    <?php include "../LoginPage/help.html"; ?>
+</div>
+</div>
     <script>
+
+ 
     function searchFaculty() {
         var query = document.getElementById('faculty-search').value;
         var xhr = new XMLHttpRequest();
@@ -147,6 +164,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'student') {
         alert("Please select both faculty and slot before booking the appointment.");
     }
 }
+
 
 
 </script>

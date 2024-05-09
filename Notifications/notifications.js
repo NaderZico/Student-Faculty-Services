@@ -24,7 +24,7 @@ function loadNotifications() {
                 // If there are no notifications, display a message
                 var noNotificationsMessage = document.createElement('p');
                 noNotificationsMessage.className = 'no-notifications';
-                noNotificationsMessage.textContent = 'No notifications. Check back later.';
+                noNotificationsMessage.textContent = 'No notifications. Check back later.'; //message
                 notificationsContainer.appendChild(noNotificationsMessage);
 
             } else {
@@ -75,7 +75,6 @@ function loadNotifications() {
         })
         .catch(error => console.error('Error:', error));
 }
-
 loadNotifications();
 
 // Function to handle notification status and font-weight

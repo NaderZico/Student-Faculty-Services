@@ -83,7 +83,7 @@ table {
   cursor: pointer;
 }
 
-.modal-content {
+.modal-content-rate{
   margin-top: 20px;
 }
 
@@ -100,8 +100,6 @@ p {
 .rating-form label {
   padding: 10px 0px 10px 0px;
   margin-right: 65px;
-
-
   align-items: center;
   justify-content: center;
 }
@@ -124,7 +122,6 @@ input[type="radio"] {
 
 .rating-button {
   background-color: #011638;
-  /* Same background color as the Cancel button */
   color: #fff;
   border: none;
   padding: 5px 10px;
@@ -135,5 +132,4 @@ input[type="radio"] {
 .rating-button:hover,
 .submit-rating:hover {
   background-color: #13489d;
-  /* Darker shade on hover */
 }

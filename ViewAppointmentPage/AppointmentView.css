@@ -4,7 +4,6 @@ body::before {
   background-size: cover;
   background-attachment: fixed;
   filter: blur(1px);
-  /* transform: scaleY(-1); */
   position: fixed;
   top: 0;
   right: 0;
@@ -54,9 +53,6 @@ table th {
   color: #fff;
 }
 
-tr:nth-child(even) {
-  background-color: #e6e6e6;
-}
 
 tr:hover {
   background-color: #bfbfbf;
@@ -83,8 +79,7 @@ tr:hover {
   border: none;
   background-color: rgb(204, 3, 3);
 }
-
-button:hover {
+.cancel-button:hover {
   background-color: rgb(217, 41, 41);
   color: white;
 }
@@ -103,4 +98,16 @@ label{
 
 .description {
   margin-top: -10px;
+}
+label {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+label input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px; 
 }
