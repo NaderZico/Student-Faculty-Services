@@ -99,7 +99,10 @@ if ($account_type === 'faculty') {
     
     $profile_id = mysqli_real_escape_string($conn, $profile_id);
 
-    $sql = "SELECT AVG(concise_score) AS avg_concise, AVG(engaging_score) AS avg_engaging, AVG(insightful_score) AS avg_insightful, COUNT(*) AS appointment_count
+    $sql = "SELECT AVG(concise_score) AS avg_concise, 
+    AVG(engaging_score) AS avg_engaging, 
+    AVG(insightful_score) AS avg_insightful, 
+    COUNT(*) AS appointment_count
             FROM rating
             WHERE rated_faculty_id = $profile_id";
     $result = mysqli_query($conn, $sql);
@@ -201,7 +204,7 @@ if ($account_type === 'faculty') {
                                 <div class="number"><?php echo round($avg_insightful, 2); ?>%</div>
                                 <div class="word">Insightful</div>
                             </div>
-                        </div>
+                        </div><br><br><br>
                     </div>
                 </div>
             <?php elseif ($account_type === 'student') :
@@ -241,7 +244,7 @@ if ($account_type === 'faculty') {
         </div>
     </div>
     <div class="comment-section-view">
-    <div class="comment-form">
+    <div class="comment-form-student">
         <?php if (isset($_SESSION['comment_error'])): ?>
             <p style="color: red;"><?php echo $_SESSION['comment_error']; ?></p>
             <?php unset($_SESSION['comment_error']); ?> <!-- Clear the error message from session -->

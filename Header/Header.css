@@ -12,7 +12,6 @@ body {
   margin: 0;
   font-family: sans-serif;
   position: relative;
-
 }
 
 button,
@@ -160,20 +159,16 @@ a {
 
 #menu ul ul {
   display: none;
-  /* Hide sub-menu by default */
   padding-left: 20px;
-  /* Adjust the padding to create indentation */
   padding-top: 20px;
 }
 
 #menu ul li>ul {
   display: block;
-  /* Show sub-menu when the parent li has the active class */
 }
 
 .sub-menu.active {
   display: block;
-  /* Show sub-menu when the submenu has the active class */
 }
 
 .line {
@@ -182,13 +177,6 @@ a {
   background-color: #c7cedb;
   margin: 4px 5px 4px 0px;
 }
-
-/* .line2 {
-  width: 330;
-  height: 3px;
-  background-color: #c7cedb;
-  margin: 10px 5px 0px 0px;
-} */
 
 .bell-icon {
   width: 20px;
@@ -381,43 +369,31 @@ a {
 .search-icon {
   background-color: #011638;
   width: 30px;
-  /* Adjust width */
   height: 30px;
-  /* Adjust height */
   padding: 5px;
-  /* Adjust padding */
   display: flex;
   justify-content: center;
-  /* Center the content horizontally */
   align-items: center;
-  /* Center the content vertically */
   margin-left: 5px;
-  /* Add margin between input and button */
 }
 
 .search-wrapper {
   display: flex;
   flex-direction: column;
-  /* Display children in a column */
-
   margin-left: 5px;
   background-color: var(--search-area-bg);
   padding-right: 12px;
   align-items: center;
-  /* Align items vertically */
   width: 100%;
   max-width: 250px;
   color: var(--light-font);
   overflow: hidden;
   height: auto;
-  /* Adjust height to fit content */
   position: relative;
-  /* Add position relative */
 }
 
 .profile-list {
   display: block;
-  /* Make sure the profile list is always visible */
   position: absolute;
   top: 70%;
   left: 6%;
@@ -439,12 +415,10 @@ option {
 .search-input-container {
   display: flex;
   align-items: center;
-  /* Align items horizontally */
 }
 
 #menu li li:hover a {
   color: rgb(177, 0, 44);
-  /* Change the text color on hover */
 }
 
 .photo {

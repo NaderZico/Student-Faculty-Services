@@ -47,12 +47,20 @@ session_start();
 
     </div>
     <div class="contact-us">
-            <a class="contact" href="mailto:farahedelbi@hotmail.com">Contact us</a>
+            <a class="contact" href="mailto:Admin@SFS.com">Contact us</a>
           </div>
-    <button class="help-button" onclick="openHelp()">
-      <img src="../Header/question mark.jpg" class="help-icon">
-      
-    </button>
+           <!-- Include the help modal HTML content -->
+<button class="help-button" onclick="toggleHelp()">
+    <img src="../Header/question mark.jpg" class="help-icon">
+</button>
+
+<!-- Add the help modal container with the modal content -->
+<div class="modal-container" id="helpModalContainer">
+    <div class="modal-content">
+    <?php include "../LoginPage/help.html"; ?>
+    <link rel="stylesheet" href="../LoginPage/help.css">
+</div>
+</div>
 
     <div class="login-container">
       <h1 class="header-login">LOGIN</h1>
@@ -76,162 +84,6 @@ session_start();
 
   </div>
 
-  <div id="helpModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeHelp()">&times;</span>
-      <div class="slider-container">
-        <div class="slide">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-          
-          <!-- Your first page content -->
-          <h2>To use the services</h2>
-          <!-- Add your form elements here -->
-          <p>First login with your AAU account</p>
-          <img src="../LoginPage/Help/16.png" alt="Description of the image" class="help-image">
-
-
-
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-        
-          <h2>Important links</h2>
-          <!-- Add your form elements here -->
-          <p>Once you login, many features are there to help you such as</p>
-          <img src="../LoginPage/Help/1.png" alt="Description of the image" class="help-image">
-
-
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-       
-          <h2>Login as STUDENT</h2>
-          <!-- Add your form elements here -->
-          <p>To navigate the website, click the menu icon. Choose your destination from the slide-out menu that appears.<br> Then, simply click on the desired option to explore. </p>
-          <img src="../LoginPage/Help/2.png" alt="Description of the image" class="help-image">
-        </div>     
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-       
-          <h2>Book an appointment.</h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/3.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-       
-          <h2>View your appointment.</h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/4.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-       
-          <h2>Rate your appointment.</h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/5.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-       
-          <h2>Login as INSTRUCTOR</h2>
-          <!-- Add your form elements here -->
-          <p>To navigate the website, click the menu icon. Choose your destination from the slide-out menu that appears.<br> Then, simply click on the desired option to explore. </p>
-          <img src="../LoginPage/Help/7.png" alt="Description of the image" class="help-image">
-        </div> 
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-      
-          <h2>Instructor profile </h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/8.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-      
-          <h2>Set slots</h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/9.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-     
-          <h2>View slots</h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/10.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-       
-          <h2>View appointment.</h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/11.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-      
-          <h2>Leave <strong>positive</strong> comment.</h2>
-          <!-- Add your form elements here -->
-          <p>Student and Faculty members can leave comment on each other's profiles.</p>
-          <img src="../LoginPage/Help/6.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-      
-          <h2>Use our Chatbot.</h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/12.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-     
-          <h2>Get courses info.</h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/13.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-       
-          <h2>Get faculty info</h2>
-          <!-- Add your form elements here -->
-          <p>  </p>
-          <img src="../LoginPage/Help/14.png" alt="Description of the image" class="help-image">
-        </div>
-        <div class="slide">
-          <img src="../Header/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
-          <img src="../Header/NextArrow.jpg" class="next-arrow" onclick="nextSlide()">
-        
-          <h2>Get general help</h2>
-          <!-- Add your form elements here -->
-          <p>How to register courses, conduct payment and Get the self-service guide</p>
-          <img src="../LoginPage/Help/15.png" alt="Description of the image" class="help-image">
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -280,43 +132,7 @@ session_start();
       }, 500); // Adjust the interval between animations as needed
     }
 
-    // Open help modal
-    function openHelp() {
-      var modal = document.getElementById("helpModal");
-      modal.style.display = "block";
-    }
 
-    // Close help modal
-    function closeHelp() {
-      var modal = document.getElementById("helpModal");
-      modal.style.display = "none";
-    }
-
-    // Slide navigation
-    var slideIndex = 1;
-    showSlide(slideIndex);
-
-    function nextSlide() {
-      showSlide(slideIndex += 1);
-    }
-
-    function prevSlide() {
-      showSlide(slideIndex -= 1);
-    }
-
-    function showSlide(n) {
-      var slides = document.getElementsByClassName("slide");
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-      for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex - 1].style.display = "block";
-    }
   </script>
 </body>
 

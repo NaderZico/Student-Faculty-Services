@@ -52,8 +52,6 @@ if (isset($_GET['faculty_id'])) {
 
     $result = $db->query($sql);
 
-
-
     if ($result) {
 
         if (mysqli_num_rows($result) > 0) {
@@ -71,10 +69,10 @@ if (isset($_GET['faculty_id'])) {
             echo "<option value=''>No available slots</option>";
         }
     } else {
-
         echo "<option value=''>Error fetching slots</option>";
     }
 }
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -86,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db->begin_transaction();
 
     // Get the date and time from the slot table
-    $sql_get_slot = "SELECT date, time FROM slot WHERE slot_id = '$slot_id'";
+    $sql_get_slot = "SELECT date, time FROM slot WHERE slot_id = '$slot_id' FOR UPDATE";
     $result_get_slot = $db->query($sql_get_slot);
 
     if ($result_get_slot && $result_get_slot->num_rows > 0) {
@@ -173,7 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         $db->rollback();
-        $_SESSION['error'] = "Error fetching slot information.";
+        $_SESSION['error'] = "The slot you selected has been canceled. Please select another timeslot.";
     }
 
     // Redirect back to the booking page

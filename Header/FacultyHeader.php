@@ -7,13 +7,13 @@ if ($conn->connect_error) {
 
 $user_id = $_SESSION['user_id'];
 
-// $select_sql = "SELECT uploads FROM account WHERE account_id = ?";
-// $stmt = $conn->prepare($select_sql);
-// $stmt->bind_param("i", $user_id);
-// $stmt->execute();
-// $stmt->bind_result($profile_photo);
-// $stmt->fetch();
-// $stmt->close();
+$select_sql = "SELECT uploads FROM account WHERE account_id = ?";
+$stmt = $conn->prepare($select_sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$stmt->bind_result($profile_photo);
+$stmt->fetch();
+$stmt->close();
 
 // Determine the profile photo path
 if ($profile_photo) {

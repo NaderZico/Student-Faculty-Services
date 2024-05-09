@@ -22,7 +22,6 @@ body::before {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* Distribute items horizontally */
   height: 100vh;
 }
 
@@ -42,13 +41,11 @@ body::before {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  /* Adjust margin as needed */
   margin-left: -5%;
 }
 
 .logo-container {
   flex: 0 0 auto;
-  /* Allow the container to shrink */
 }
 
 .logo {
@@ -165,18 +162,14 @@ body::before {
   position: relative;
   width: 100%;
   max-width: 600px;
-  /* Adjust the max-width as needed */
   margin-top: 5%;
   overflow: hidden;
-  /* Hide overflowing content */
 }
 
 .mySlides {
   display: none;
   text-align: center;
-  /* Center the content */
   color: #011638;
-  /* Set text color to a darker shade for contrast */
 }
 
 .main-title {
@@ -198,7 +191,6 @@ body::before {
 .dot {
   margin-right: 5px;
   animation: blink 1s infinite alternate;
-  /* Add animation to dots */
 }
 
 @keyframes blink {
@@ -231,7 +223,6 @@ body::before {
 
 .question-answer {
   display: none;
-  /* Hide all question-answer pairs initially */
 }
 
 .question {
@@ -266,32 +257,24 @@ body::before {
 
 }
 
-/* Modal styles */
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
 }
 
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto;
-  /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 70%;
-  /* Could be more or less, depending on screen size */
   height: 70%;
 }
 
@@ -309,7 +292,6 @@ body::before {
   cursor: pointer;
 }
 
-/* Slider container */
 .slider-container {
   position: relative;
 }
@@ -355,9 +337,6 @@ body::before {
   text-decoration: none;
   font-weight: bold;
 }
-
-/* Inside your existing CSS */
-
 .prev-arrow,
 .next-arrow {
   position: absolute;
@@ -371,10 +350,8 @@ body::before {
 
 .prev-arrow {
   left: -2%;
-  /* Position the arrow on the left side */
 }
 
 .next-arrow {
   right: -2%;
-  /* Position the arrow on the right side */
 }

@@ -28,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$sql = "SELECT slot_id, time, date FROM slot WHERE faculty_id = '$user_id' AND status = 'available' ORDER BY date";
+$sql = "SELECT slot_id, time, date FROM slot WHERE faculty_id = '$user_id' AND status = 'available' ORDER BY date, time";
+
 $result = $db->query($sql);
 
 ?>
@@ -98,6 +99,18 @@ $result = $db->query($sql);
         </table>
     </div>
 
+        <!-- Include the help modal HTML content -->
+        <button class="help-button" onclick="toggleHelp()">
+    <img src="../Header/question mark.jpg" class="help-icon">
+</button>
+
+<!-- Add the help modal container with the modal content -->
+<div class="modal-container" id="helpModalContainer">
+    <div class="modal-content">
+    <?php include "../LoginPage/help.html"; ?>
+    <link rel="stylesheet" href="../LoginPage/help.css">
+</div>
+</div>
     <script>
         function confirmCancellation(time, date) {
             if (confirm("Are you sure you want to cancel the slot for " + time + " on " + date + "?")) {

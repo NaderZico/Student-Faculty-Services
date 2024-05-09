@@ -6,11 +6,11 @@ if ($db->connect_error) {
 include_once "Notifications/send_notifications.php";
 
 // Update slot status from available to closed if they have not been booked 12 hours before the current time
-$currentDateTimeMinusFiveHours = date('Y-m-d H:i:s', strtotime('-12 hours'));
+$currentDateTimeMinusTwelveHours = date('Y-m-d H:i:s', strtotime('-12 hours'));
 $sql_update_slot = "UPDATE slot 
         SET status = 'closed' 
         WHERE status = 'available' 
-        AND CONCAT(date, ' ', time) < '$currentDateTimeMinusFiveHours'";
+        AND CONCAT(date, ' ', time) < '$currentDateTimeMinusTwelveHours'";
 $db->query($sql_update_slot);
 
 // Update appointment status based on the current date and time

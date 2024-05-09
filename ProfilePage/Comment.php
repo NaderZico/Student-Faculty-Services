@@ -192,7 +192,8 @@ function setViewProfileComments($conn, $profile_id){
         $content = $_POST['content'];
         $date = $_POST['date'];
         $time = $_POST['time'];
-        $sql = "INSERT INTO commendation (receiver_id, sender_id, content, date, time) VALUES ('$receiver_id', '$sender_id', '$content', '$date', '$time')";
+        $sql = "INSERT INTO commendation (receiver_id, sender_id, content, date, time)
+         VALUES ('$receiver_id', '$sender_id', '$content', '$date', '$time')";
         if(mysqli_query($conn, $sql)){
             // Successfully inserted into database
             header("Location: ".$_SERVER['PHP_SELF']);
