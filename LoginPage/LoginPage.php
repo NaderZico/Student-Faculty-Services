@@ -1,4 +1,4 @@
-<title>Login Page</title>
+<!DOCTYPE html>
 
 <?php
 include "../Chatbot/Chatbot.php";
@@ -11,7 +11,7 @@ session_start();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="LoginPage.css">
-
+  <title>Login Page</title>
 </head>
 
 <body>
@@ -80,6 +80,7 @@ session_start();
         </div>
         <button class="button" id="submit" type="submit">Login</button>
       </form>
+      <h4 class="register-text">Don't have an account? <a href="./RegisterPage.php">Register here.</a></h4>
     </div>
 
   </div>
