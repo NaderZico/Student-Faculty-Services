@@ -355,3 +355,7 @@ body::before {
 .next-arrow {
   right: -2%;
 }
+
+.register-text {
+  text-align: center;
+}
