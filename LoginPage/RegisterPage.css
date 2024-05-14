@@ -21,6 +21,7 @@ body::before {
 
 .register-description {
     font-size: 1.5rem;
+    margin: 0;
 }
 
 .register-container {
@@ -37,6 +38,11 @@ body::before {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 15px;
+}
+
+.radio-input {
+    margin-left: 15px;
 }
 
 select {
@@ -65,8 +71,8 @@ select {
     cursor: pointer;
     width: 70%;
     font-weight: bold;
-    margin-bottom: 10px;
     transition: background-color 0.2s ease;
+    margin-top: 10px;
   }
   
   .button:hover {
