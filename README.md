@@ -1,4 +1,4 @@
-The project was created as a concept specifically for Al Ain University (AAU) by two AAU students
+The website was created as a senior Capstone project specifically for Al Ain University (AAU) by two AAU students
 # [**Student Faculty Services**](https://student-faculty-services.42web.io)
 What you can do.
 - View profiles and post comments
