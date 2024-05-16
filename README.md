@@ -1,4 +1,4 @@
-The website was created as a senior Capstone project specifically for Al Ain University (AAU) by two ambitious software engineering graduate students.
+The website was created as a senior Capstone project specifically for Al Ain University (AAU) by two ambitious software engineering graduate students
 # [**Student-Faculty Services**](https://student-faculty-services.42web.io)
 What you can do
 - View profiles and post comments
