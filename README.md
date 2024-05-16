@@ -4,6 +4,7 @@ What you can do
 - View profiles and post comments
 - Use our chatbot (Aimed at AAU students) - Created using [React-chatbot-kit](https://fredrikoseberg.github.io/react-chatbot-kit-docs/) as a base
 - Book and manage appointments as a student with faculty members
+- Rate your completed appointments with faculty memebers
 
 ------------------------------------------------------------------------------------
 ### Update 1
