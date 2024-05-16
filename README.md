@@ -2,7 +2,7 @@ The website was created as a senior Capstone project specifically for Al Ain Uni
 # [**Student-Faculty Services**](https://student-faculty-services.42web.io)
 What you can do
 - View profiles and post comments
-- Use the chatbot aimed at AAU students - Created using React with React-chatbot-kit as a base
+- Use our chatbot (Aimed at AAU students) - Created using react-chatbot-kit as a base
 - Book and manage appointments as a student with faculty members
 
 ------------------------------------------------------------------------------------
