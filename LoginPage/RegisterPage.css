@@ -79,4 +79,14 @@ select {
     background-color: #C7CEDB;
     color: #011638;
   }
+
+  .message {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    color: rgb(213, 0, 0);
+  }
   
