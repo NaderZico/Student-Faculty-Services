@@ -1,8 +1,8 @@
-The website was created as a senior Capstone project specifically for Al Ain University (AAU) by two AAU students
-# [**Student Faculty Services**](https://student-faculty-services.42web.io)
+The website was created as a senior Capstone project specifically for Al Ain University (AAU) by two ambitious software engineering graduate students.
+# [**Student-Faculty Services**](https://student-faculty-services.42web.io)
 What you can do
 - View profiles and post comments
-- Use the chatbot (Made using AAU data for AAU students)
+- Use the chatbot aimed at AAU students - Created using React with React-chatbot-kit as a base
 - Book and manage appointments as a student with faculty members
 
 ------------------------------------------------------------------------------------
