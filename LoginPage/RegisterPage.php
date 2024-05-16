@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,20 +9,20 @@
     <title>Create an Account</title>
     <script>
         function showOptions(accountType) {
-  var collegeOptions = document.getElementById('college-options');
-  var facultyOptions = document.getElementById('faculty-options');
-  var departmentInput = document.getElementById('department');
+            var collegeOptions = document.getElementById('college-options');
+            var facultyOptions = document.getElementById('faculty-options');
+            var departmentInput = document.getElementById('department');
 
-  if (accountType === 'student') {
-    collegeOptions.style.display = 'block';
-    facultyOptions.style.display = 'none';
-    departmentInput.removeAttribute('required'); // Remove required for student
-  } else if (accountType === 'faculty') {
-    collegeOptions.style.display = 'none';
-    facultyOptions.style.display = 'block';
-    departmentInput.setAttribute('required', true); // Add required for faculty
-  }
-}
+            if (accountType === 'student') {
+                collegeOptions.style.display = 'block';
+                facultyOptions.style.display = 'none';
+                departmentInput.removeAttribute('required'); // Remove required for student
+            } else if (accountType === 'faculty') {
+                collegeOptions.style.display = 'none';
+                facultyOptions.style.display = 'block';
+                departmentInput.setAttribute('required', true); // Add required for faculty
+            }
+        }
 
         function populateMajors() {
             var college = document.getElementById('college').value;
@@ -86,8 +87,7 @@
 
             <div id="faculty-options" style="display: none;">
                 <label for="department" class="label">Department:</label>
-                <input type="text" id="department" name="department" 
-                placeholder="ex. Associate Professor, College of Engineering"><br><br>
+                <input type="text" id="department" name="department" placeholder="ex. Associate Professor, College of Engineering"><br><br>
             </div>
 
 
@@ -106,10 +106,10 @@
             <input class="input" type="password" id="password" name="password" autocomplete="on" placeholder="enter password" required><br><br>
 
 
-            <div class="error-message">
+            <div class="message">
                 <?php
                 if (isset($_SESSION['error'])) {
-                    echo "<span>Invalid email or password. Please try again.</span>";
+                    echo "<span class='error-message'>" . $_SESSION['error'] . "</span>";
                     unset($_SESSION['error']);
                 }
                 ?>

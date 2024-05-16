@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (password_verify($password, $password_hash)) {
       // Password matches - Login successful
-      $_SESSION['user_id'] = $row['account_id']; // Store user ID in session
-      $_SESSION['user_email'] = $row['email']; // Store user ID in session
+      $_SESSION['user_id'] = $row['account_id']; 
+      $_SESSION['user_email'] = $row['email'];
       $_SESSION['user_name'] = $row['first_name'] . " " . $row['last_name'];
       $_SESSION['user_type'] = $row['account_type'];
 
