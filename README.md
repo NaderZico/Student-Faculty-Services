@@ -6,8 +6,10 @@ What you can do.
 - Book and manage appointments with faculty members
 
 ------------------------------------------------------------------------------------
-### Update
+### Update 1
 An account registration feature has been added to allow anyone to use the website (An AAU account is no longer required to log in).
+### Upcoming
+The design will be improved further to make sure the website scales better with various PC screen sizes.
 
 ----------------------------------------------------------------------------------------
 ## Login Page
