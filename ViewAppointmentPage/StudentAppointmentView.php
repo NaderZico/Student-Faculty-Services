@@ -29,7 +29,7 @@ $db->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Appointment</title>
+    <title>Manage Appointments</title>
     <link rel="stylesheet" href="AppointmentView.css">
     <script>
         function confirmCancellation(form) {
@@ -37,11 +37,11 @@ $db->close();
                 form.submit();
             }
         }
+
     </script>
 </head>
 
 <body>
-
     <?php 
     include "../Header/StudentHeader.php";
     include "../Chatbot/Chatbot.php"; 
@@ -57,7 +57,6 @@ $db->close();
                 <?php unset($_SESSION['success']); // Clear the success message ?>
             <?php endif; ?>
 
-            <!-- Display error message if it exists -->
             <?php if(isset($_SESSION['error'])): ?>
                 <span class="error-message"><?php echo $_SESSION['error']; ?></span>
                 <?php unset($_SESSION['error']); // Clear the error message ?>
@@ -66,57 +65,53 @@ $db->close();
 
         <div class="table-container">
             <table>
-                <tr>
-                    <th>Appointment ID</th>
-                    <th>Faculty Name</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Action</th>
-                </tr>
-                <?php
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["appointment_id"] . "</td>";
-                        echo "<td>" . $row["faculty_name"] . "</td>";
+                <thead>
+                    <tr>
+                        <th>Appointment ID</th>
+                        <th>Faculty Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["appointment_id"] . "</td>";
+                            echo "<td>" . $row["faculty_name"] . "</td>";
 
-                        // Convert the date format to DD-MM-YYYY
-                        $date_formatted = date("d-m-Y", strtotime($row["date"]));
-                        $time_formatted = date("H:i", strtotime($row["time"]));
+                            $date_formatted = date("d-m-Y", strtotime($row["date"]));
+                            $time_formatted = date("H:i", strtotime($row["time"]));
 
-                        echo "<td>" . $date_formatted . "</td>";
-                        echo "<td>" . $time_formatted . "</td>";
-
-                        echo "<td>";
-                        echo "<form method='post' action='cancel_appointment.php' onsubmit='confirmCancellation(this); return false;'>";
-                        echo "<input type='hidden' name='cancel_appointment' value='" . $row["appointment_id"] . "'>";
-                        echo "<button class='cancel-button' type='submit'>Cancel</button>";
-                        echo "</form>";
-                        echo "</td>";
-                        echo "</tr>";
+                            echo "<td>" . $date_formatted . "</td>";
+                            echo "<td>" . $time_formatted . "</td>";
+                            echo "<td>";
+                            echo "<form method='post' action='cancel_appointment.php' onsubmit='confirmCancellation(this); return false;'>";
+                            echo "<input type='hidden' name='cancel_appointment' value='" . $row["appointment_id"] . "'>";
+                            echo "<button class='cancel-button' type='submit'>Cancel</button>";
+                            echo "</form>";
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='5'>No appointments found</td></tr>";
                     }
-                } else {
-                    // Display a message if no appointments are found
-                    echo "<tr><td colspan='5'>No appointments found</td></tr>";
-                }
-                ?>
+                    ?>
+                </tbody>
             </table>
         </div>
-    </div><br><br>
-               <!-- Include the help modal HTML content -->
-<button class="help-button" onclick="toggleHelp()">
-    <img src="../Header/question mark.jpg" class="help-icon">
-</button>
+    </div>
+    
+    <button class="help-button" onclick="toggleHelp()">
+        <img src="../images/icons/question mark.jpg" class="help-icon">
+    </button>
 
-<!-- Add the help modal container with the modal content -->
-<div class="modal-container" id="helpModalContainer">
-    <div class="modal-content">
-    <?php include "../LoginPage/help.html"; ?>
-    <link rel="stylesheet" href="../LoginPage/help.css">
-</div>
-</div>
-
-
+    <div class="modal-container" id="helpModalContainer">
+        <div class="modal-content">
+            <?php include "../HelpModal/help.html"; ?>
+        </div>
+    </div>
 </body>
-
 </html>

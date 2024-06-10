@@ -90,6 +90,7 @@ include "../Chatbot/Chatbot.php";
     </div>
 </div>
 
+
     
 
 <!-- Rating Form -->
@@ -134,13 +135,13 @@ include "../Chatbot/Chatbot.php";
 
         <!-- Include the help modal HTML content -->
         <button class="help-button" onclick="toggleHelp()">
-    <img src="../Header/question mark.jpg" class="help-icon">
+    <img src="../images/icons/question mark.jpg" class="help-icon">
 </button>
 
 <!-- Add the help modal container with the modal content -->
 <div class="modal-container" id="helpModalContainer">
     <div class="modal-content">
-    <?php include "../LoginPage/help.html"; ?>
+    <?php include "../HelpModal/help.html"; ?>
 </div>
 </div>
 <script>

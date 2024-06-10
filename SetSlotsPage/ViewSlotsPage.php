@@ -40,7 +40,7 @@ $result = $db->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Slots</title>
+    <title>Manage Slots</title>
     <link rel="stylesheet" href="ViewSlotsPage.css">
 </head>
 
@@ -54,71 +54,57 @@ $result = $db->query($sql);
         <h4 class="description-text">Manage your availability for appointments</h4>
         <div class="message">
             <?php
-    if (isset($_SESSION['error'])) {
-        echo "<span class='error-message'>" . $_SESSION['error'] . "</span>";
-        unset($_SESSION['error']);
-    }
-    if (isset($_SESSION['success'])) {
-        echo "<span class='success-message'>" . $_SESSION['success'] . "</span>";
-        unset($_SESSION['success']);
-    }
-    ?>
+            if (isset($_SESSION['error'])) {
+                echo "<span class='error-message'>" . $_SESSION['error'] . "</span>";
+                unset($_SESSION['error']);
+            }
+            if (isset($_SESSION['success'])) {
+                echo "<span class='success-message'>" . $_SESSION['success'] . "</span>";
+                unset($_SESSION['success']);
+            }
+            ?>
         </div>
         <table>
             <tr>
-                <!-- <th>Slot ID</th> -->
                 <th>Time</th>
                 <th>Date</th>
                 <th>Action</th>
             </tr>
             <?php
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td class='hidden-slot-id'>" . $row["slot_id"] . "</td>";
-                $time_formatted = date("H:i", strtotime($row["time"]));
-                echo "<td>" . $time_formatted . "</td>";
-        
-                // Convert the date format to DD-MM-YYYY
-                $date_formatted = date("d-m-Y", strtotime($row["date"]));
-        
-                echo "<td>" . $date_formatted . "</td>";
-        
-                echo "<td>";
-                echo "<form class='cancel-form' method='post' action='".$_SERVER["PHP_SELF"]."'>";
-                echo "<input type='hidden' name='cancel_slot' value='" . $row["slot_id"] . "'>";
-                echo "<button type='button' class='cancel-btn' onclick='confirmCancellation(" . json_encode($time_formatted) . ", " . json_encode($date_formatted) . ")'>Cancel</button>";
-                echo "</form>";
-                echo "</td>";
-                echo "</tr>";
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td class='hidden-slot-id'>" . $row["slot_id"] . "</td>";
+                    $time_formatted = date("H:i", strtotime($row["time"]));
+                    echo "<td>" . $time_formatted . "</td>";
+
+                    // Convert the date format to DD-MM-YYYY
+                    $date_formatted = date("d-m-Y", strtotime($row["date"]));
+
+                    echo "<td>" . $date_formatted . "</td>";
+
+                    echo "<td>";
+                    echo "<form class='cancel-form' method='post' action='" . $_SERVER["PHP_SELF"] . "'>";
+                    echo "<input type='hidden' name='cancel_slot' value='" . $row["slot_id"] . "'>";
+                    echo "<button type='button' class='cancel-btn' onclick='confirmCancellation(" . json_encode($time_formatted) . ", " . json_encode($date_formatted) . ")'>Cancel</button>";
+                    echo "</form>";
+                    echo "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='3'>No slots available</td></tr>";
             }
-        } else {
-            echo "<tr><td colspan='4'>No slots available</td></tr>";
-        }
-        ?>
+            ?>
         </table>
-    </div>
 
-        <!-- Include the help modal HTML content -->
-        <button class="help-button" onclick="toggleHelp()">
-    <img src="../Header/question mark.jpg" class="help-icon">
-</button>
-
-<!-- Add the help modal container with the modal content -->
-<div class="modal-container" id="helpModalContainer">
-    <div class="modal-content">
-    <?php include "../LoginPage/help.html"; ?>
-    <link rel="stylesheet" href="../LoginPage/help.css">
-</div>
-</div>
-    <script>
-        function confirmCancellation(time, date) {
-            if (confirm("Are you sure you want to cancel the slot for " + time + " on " + date + "?")) {
-                // Submit the form if the user confirms
-                event.target.closest(".cancel-form").submit();
+        <script>
+            function confirmCancellation(time, date) {
+                if (confirm("Are you sure you want to cancel the slot for " + time + " on " + date + "?")) {
+                    // Submit the form if the user confirms
+                    event.target.closest(".cancel-form").submit();
+                }
             }
-        }
-    </script>
+        </script>
 
 </body>
 

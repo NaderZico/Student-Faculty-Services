@@ -46,12 +46,7 @@ if (isset($_FILES['profile_photo']) && $_FILES['profile_photo']['error'] === UPL
         $_SESSION['profile_photo'] = 'uploads/' . $unique_name; // Relative path to the uploaded photo
 
         // Insert the file path into the database
-        $db_host = "localhost";
-        $db_user = "root";
-        $db_password = "";
-        $db_name = "capstone";
-
-        $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+        $conn = new mysqli("localhost", "root", "", "capstone");
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }

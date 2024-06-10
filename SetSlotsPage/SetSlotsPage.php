@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 include "../db_connection.php";
 
 if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'faculty') {
@@ -20,11 +19,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'faculty') {
 </head>
 
 <body>
-
     <?php 
-  include "../Header/FacultyHeader.php";
-  include "../Chatbot/Chatbot.php"; 
-  ?>
+    include "../Header/FacultyHeader.php";
+    include "../Chatbot/Chatbot.php"; 
+    ?>
 
     <div class="section">
         <div class="form">
@@ -37,27 +35,27 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'faculty') {
                     <select name="time" id="time" class="select-style" required>
                         <option value="">Select a Time</option>
                         <?php
-                            // Generate time options for the day
-                            $startTime = 9;
-                            $endTime = 17;
+                        // Generate time options for the day
+                        $startTime = 9;
+                        $endTime = 17;
 
-                            for ($hour = $startTime; $hour <= $endTime; $hour++) {
-                                for ($minute = 0; $minute < 60; $minute += 15) {
-                                    $time = sprintf("%02d:%02d", $hour, $minute);
-                                    $endTimeMinutes = $minute + 15;
-                                    $endTimeHour = $hour;
+                        for ($hour = $startTime; $hour <= $endTime; $hour++) {
+                            for ($minute = 0; $minute < 60; $minute += 15) {
+                                $time = sprintf("%02d:%02d", $hour, $minute);
+                                $endTimeMinutes = $minute + 15;
+                                $endTimeHour = $hour;
 
-                                    // Adjust the end time if it exceeds 60 minutes
-                                    if ($endTimeMinutes >= 60) {
-                                        $endTimeMinutes = 0;
-                                        $endTimeHour += 1;
-                                    }
-                                    $endTimeFormatted = sprintf("%02d:%02d", $endTimeHour, $endTimeMinutes);
-
-                                    // Display the time slot
-                                    echo "<option value=\"$time\">$time to $endTimeFormatted</option>";
+                                // Adjust the end time if it exceeds 60 minutes
+                                if ($endTimeMinutes >= 60) {
+                                    $endTimeMinutes = 0;
+                                    $endTimeHour += 1;
                                 }
+                                $endTimeFormatted = sprintf("%02d:%02d", $endTimeHour, $endTimeMinutes);
+
+                                // Display the time slot
+                                echo "<option value=\"$time\">$time to $endTimeFormatted</option>";
                             }
+                        }
                         ?>
                     </select>
                 </div>
@@ -68,14 +66,14 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'faculty') {
                 </div>
                 <div class="message">
                     <?php
-                        if (isset($_SESSION['error'])) {
-                            echo "<span class='error-message'>" . $_SESSION['error'] . "</span>";
-                             unset($_SESSION['error']);
-                        }
-                        if (isset($_SESSION['success'])) {
-                            echo "<span class='success-message'>" . $_SESSION['success'] . "</span>";
-                            unset($_SESSION['success']);
-                        }
+                    if (isset($_SESSION['error'])) {
+                        echo "<span class='error-message'>" . $_SESSION['error'] . "</span>";
+                        unset($_SESSION['error']);
+                    }
+                    if (isset($_SESSION['success'])) {
+                        echo "<span class='success-message'>" . $_SESSION['success'] . "</span>";
+                        unset($_SESSION['success']);
+                    }
                     ?>
                 </div>
 
@@ -84,29 +82,25 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'faculty') {
                 </div>
             </form>
         </div>
-    </div><br><br><br>
+    </div>
 
-    
-        <!-- Include the help modal HTML content -->
-<button class="help-button" onclick="toggleHelp()">
-    <img src="../Header/question mark.jpg" class="help-icon">
-</button>
+    <button class="help-button" onclick="toggleHelp()">
+        <img src="../images/icons/question mark.jpg" class="help-icon">
+    </button>
 
-<!-- Add the help modal container with the modal content -->
-<div class="modal-container" id="helpModalContainer">
-    <div class="modal-content">
-    <?php include "../LoginPage/help.html"; ?>
-    <link rel="stylesheet" href="../LoginPage/help.css">
-</div>
-</div>
+    <div class="modal-container" id="helpModalContainer">
+        <div class="modal-content">
+            <?php include "../HelpModal/help.html"; ?>
+        </div>
+    </div>
+
     <script>
         function confirmSlot() {
             var selectedTime = document.getElementById('time').value;
-            var selectedDate= document.getElementById('date').value;
+            var selectedDate = document.getElementById('date').value;
 
-            return confirm('Are you sure you want to set this slot for ' + selectedTime +' on '+ selectedDate+ '?');
+            return confirm('Are you sure you want to set this slot for ' + selectedTime + ' on ' + selectedDate + '?');
         }
     </script>
 </body>
-
 </html>
