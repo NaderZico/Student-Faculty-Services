@@ -13,7 +13,6 @@ body::before {
   left: 0;
   z-index: -1;
 }
-
 .section {
   display: flex;
   justify-content: center;
@@ -28,7 +27,6 @@ body::before {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
-
 label {
   display: block;
   font-size: 20px;

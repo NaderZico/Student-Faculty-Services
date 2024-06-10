@@ -32,7 +32,7 @@ $stmt->close();
 if ($profile_photo) {
     $profile_photo_path = $profile_photo;
 } else {
-    $profile_photo_path = "../ProfilePage/User icon.png"; // Default photo path
+    $profile_photo_path = "../images/icons/User icon.png"; // Default photo path
 }
 ?>
 
@@ -49,7 +49,7 @@ if ($profile_photo) {
         <!-- <img src="../LoginPage/AAU logo.png" alt="logo" class="logo"> -->
         <div class="user-details">
             <button class="editProfileBtn" id="editProfileBtn">
-                <img src="../ProfilePage/pen icon.jpg" class="edit_icon">
+                <img src="../images/icons/pen icon.jpg" class="edit_icon">
             </button>
             <img src="<?php echo $profile_photo_path; ?>" class="user-photo-student">
             <?php echo $_SESSION['user_name']; ?>

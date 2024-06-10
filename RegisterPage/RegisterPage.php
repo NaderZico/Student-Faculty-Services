@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,8 +93,7 @@
 
             <div id="faculty-options" style="display: none;">
                 <label for="department" class="label">Department:</label>
-                <input type="text" id="department" name="department" 
-                placeholder="ex. Associate Professor, College of Engineering"><br><br>
+                <input type="text" id="department" name="department" placeholder="ex. Associate Professor, College of Engineering"><br><br>
             </div>
 
 
@@ -112,10 +112,10 @@
             <input class="input" type="password" id="password" name="password" autocomplete="on" placeholder="enter password" required><br><br>
 
 
-            <div class="error-message">
+            <div class="message">
                 <?php
                 if (isset($_SESSION['error'])) {
-                    echo "<span>Invalid email or password. Please try again.</span>";
+                    echo "<span class='error-message'>" . $_SESSION['error'] . "</span>";
                     unset($_SESSION['error']);
                 }
                 ?>
