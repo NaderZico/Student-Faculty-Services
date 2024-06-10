@@ -1,9 +1,5 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
 
-// Establish database connection
 $db = mysqli_connect("localhost", "root", "", "capstone");
 
 if ($db->connect_error) {
@@ -20,16 +16,12 @@ if (isset($_GET['query']) && !empty($_GET['query'])) {
             FROM account 
             WHERE CONCAT(first_name, ' ', last_name) LIKE ?";
 
-    // Prepare the statement
     $stmt = $db->prepare($sql);
 
-    // Bind the parameter
     $stmt->bind_param("s", $search_query);
 
-    // Execute the query
     $stmt->execute();
 
-    // Get the result
     $result = $stmt->get_result();
 
     // Check if any matching names are found
@@ -43,10 +35,8 @@ if (isset($_GET['query']) && !empty($_GET['query'])) {
         echo "<option value=''>No profile found</option>";
     }
 
-    // Close statement
     $stmt->close();
 }
 
-// Close database connection
 $db->close();
 ?>

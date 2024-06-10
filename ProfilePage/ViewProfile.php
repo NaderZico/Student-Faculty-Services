@@ -10,12 +10,10 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 
-// Include necessary files
 include "../Chatbot/Chatbot.php";
 date_default_timezone_set('Asia/Dubai');
 
-include 'Comment.php'; // Include your existing Comments.php file
-include 'SearchProfile.php';
+include_once 'comments/handle_comments.php';
 
 if ($_SESSION['user_type'] === 'faculty') {
     include "../Header/FacultyHeader.php";
@@ -136,7 +134,7 @@ if ($account_type === 'faculty') {
 
 <body>
     <div class="profile-content">
-    <img src="../LoginPage/AAU logo.png" alt="logo" class="logo">
+    <!-- <img src="../LoginPage/AAU logo.png" alt="logo" class="logo"> -->
        <!-- Inside the user-details div -->
 <div class="user-details">
     <?php

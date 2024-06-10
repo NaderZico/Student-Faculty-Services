@@ -2,72 +2,59 @@
 session_start();
 
 // Check if the user is logged in
-if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'faculty' && $_SESSION['user_type'] !== 'student') {
+if (!isset($_SESSION['user_id'])) {
     header("Location: ../LoginPage/LoginPage.php");
     exit();
 }
 
+// Connect to the database
+$conn = new mysqli("localhost", "root", "", "capstone");
+if ($conn->connect_error) {
+    // Log the database connection error
+    error_log("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
+}
 
-// Default user icon path
-$default_user_icon = "../ProfilePage/User icon.png";
-$user_type = $_SESSION['user_type'];
+$user_id = $_SESSION['user_id'];
 
-// Remove the profile photo if it exists
-if (isset($_SESSION['profile_photo'])) {
-    // Get the path to the uploaded photo
-    $photo_path = $_SESSION['profile_photo'];
+// Retrieve the current photo path from the database
+$select_sql = "SELECT uploads FROM account WHERE account_id = ?";
+$stmt = $conn->prepare($select_sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
 
-    // Check if the photo file exists
-    if (file_exists($photo_path)) {
-        // Attempt to delete the photo file
-        if (unlink($photo_path)) {
-            // Photo deletion successful
-            unset($_SESSION['profile_photo']); // Remove photo path from session
+if ($row && file_exists($row['uploads'])) {
+    unlink($row['uploads']);
 
-            // Update the profile photo path in the session with the default user icon
-            $_SESSION['profile_photo'] = $default_user_icon;
+    // Update the database to reflect that the photo has been removed
+    $update_sql = "UPDATE account SET uploads = NULL WHERE account_id = ?";
+    $update_stmt = $conn->prepare($update_sql);
+    $update_stmt->bind_param("i", $user_id);
 
-            // Insert the default file path into the database
-            $db_host = "localhost";
-            $db_user = "root";
-            $db_password = "";
-            $db_name = "capstone";
+    if ($update_stmt->execute()) {
+        // Update the session variable
+        unset($_SESSION['profile_photo']);
 
-            $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            $user_id = $_SESSION['user_id'];
-
-            $update_sql = "UPDATE account SET uploads = ? WHERE account_id = ?";
-            $stmt = $conn->prepare($update_sql);
-            $stmt->bind_param("si", $default_user_icon, $user_id);
-
-            if ($stmt->execute()) {
-                // Success: Profile photo updated with default user icon
-            } else {
-                // Error: Failed to update profile photo path in the database
-            }
-
-            $stmt->close();
-            $conn->close();
-        } else {
-            // Failed to delete the photo file
+        // Redirect based on the user type
+        if ($_SESSION['user_type'] === 'student') {
+            header("Location: StudentProfile.php");
+        } elseif ($_SESSION['user_type'] === 'faculty') {
+            header("Location: FacultyProfile.php");
         }
+        exit();
     } else {
-        // Photo file does not exist
+        // Log the error if the update fails
+        error_log("Update failed: " . $update_stmt->error);
     }
+
+    $update_stmt->close();
 } else {
-    // No uploaded photo found in session
+    // Log the error if no photo is found
+    error_log("No photo found for user ID: " . $user_id);
 }
 
-// Redirect back to the profile page
-if($user_type=='student'){
-    header("Location: StudentProfile.php");
-}
-    else{
-        header("Location: FacultyProfile.php");
-
-    }exit();
+$stmt->close();
+$conn->close();
 ?>

@@ -6,8 +6,9 @@ body {
 
 body::before {
   content: "";
-  background-image: url("../Header/14731376_rm222batch5-mind-033.png");
+  background-image: url("../images/backgrounds/14731376_rm222batch5-mind-0334.png");
   background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   position: fixed;
   top: 0;
