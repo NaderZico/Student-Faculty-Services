@@ -12,7 +12,11 @@ An account registration feature has been added to allow anyone to use the websit
 ### Areas of Improvement
 - UI currently does not scale well with various PC screen sizes.
 - Some elements of the UI need to be improved.
-- File structure is unorganized.
+- ~~File structure is unorganized.~~ (UPDATED)
+
+### Update 2
+- Improved file structure
+- Improved scalability and design of forms and tables
 
 ----------------------------------------------------------------------------------------
 ## Login Page
