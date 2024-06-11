@@ -90,7 +90,7 @@ button.cancel-button:hover {
 }
 
 .hidden-form.show {
-  display: block;
+  display: table-row;
 }
 
 label {
