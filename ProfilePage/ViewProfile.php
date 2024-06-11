@@ -153,7 +153,7 @@ if ($account_type === 'faculty') {
         echo '<img src="' . $profile_photo_path . '" class="user-photo-view" alt="Profile Photo">';
     } else {
         // If profile photo path doesn't exist in the database or is empty, display default photo
-        echo '<img src="../ProfilePage/User icon.png" class="user-photo-view" alt="Profile Photo">';
+        echo '<img src="../images/icons/User icon.png" class="user-photo-view" alt="Profile Photo">';
     }
     ?>
     <?php echo $userDetails['first_name'] . ' ' . $userDetails['last_name']; ?>
