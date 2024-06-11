@@ -19,7 +19,7 @@ $stmt->close();
 if ($profile_photo) {
     $profile_photo_path = $profile_photo;
 } else {
-    $profile_photo_path = "../ProfilePage/User icon.png"; // Default photo path
+    $profile_photo_path = "../images/icons/User icon.png"; // Default photo path
 }
 ?>
 <!DOCTYPE html>
@@ -80,7 +80,7 @@ if ($profile_photo) {
                     <div class="search-input-container">
                         <input oninput="searchProfile()" type="search" name="search-profile" class="search-profile search-input" id="search-profile" placeholder="Search for Profiles" list="profile-list">
                         <button onclick="redirectToProfile()" type="button" class="search-button">
-                            <img src="../Header/Search-icon.png" alt="Search Icon" class="search-icon">
+                            <img src="../images/icons/Search-icon.png" alt="Search Icon" class="search-icon">
                         </button>
                     </div>
                 </div>
@@ -88,15 +88,11 @@ if ($profile_photo) {
 
                 </select>
 
-
-
-
                 <div class="web-name-container">
                     <p class="web-name">STUDENT-FACULTY</p>
                     <p class="web-services">SERVICES</p>
                 </div>
             </div>
-
 
             <div class="web-header-right">
                 <div class="notification-btn">
@@ -163,14 +159,13 @@ if ($profile_photo) {
         function searchProfile() {
             var query = document.getElementById('search-profile').value;
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'SearchProfile.php?query=' + query, true);
+            xhr.open('GET', '../Header/SearchProfile.php?query=' + query, true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var selectElement = document.getElementById('profile-list');
                     selectElement.innerHTML = xhr.responseText;
                     // Always show the profile list when the user starts typing
                     selectElement.style.display = query.trim() !== '' ? 'block' : 'none'; // Show/hide profile list based on input
-
 
                 }
             };

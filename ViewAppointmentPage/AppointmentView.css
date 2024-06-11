@@ -1,6 +1,7 @@
+/* General Styles */
 body::before {
   content: "";
-  background-image: url("../Header/14731376_rm222batch5-mind-03.jpg");
+  background-image: url("../images/backgrounds/14731376_rm222batch5-mind-03.jpg");
   background-size: cover;
   background-attachment: fixed;
   filter: blur(1px);
@@ -15,17 +16,16 @@ body::before {
 .main-content {
   background-color: white;
   max-width: 800px;
-  margin: auto;
-  margin-top: 50px;
+  margin: 50px auto;
   border-radius: 10px;
   text-align: center;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .message {
   text-align: center;
-  margin: 0;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
 }
 
 .success-message {
@@ -39,6 +39,7 @@ body::before {
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 table th,
@@ -53,61 +54,59 @@ table th {
   color: #fff;
 }
 
-
 tr:hover {
   background-color: #bfbfbf;
 }
 
-.Approve-button {
-  background-color: #011638;
-  color: #fff;
+button {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
 }
 
-.Approve-button:hover {
+button.Approve-button {
+  background-color: #011638;
+  color: #fff;
+}
+
+button.Approve-button:hover {
   background-color: #13489d;
-  border:none;
 }
 
-.cancel-button {
+button.cancel-button {
+  background-color: rgb(204, 3, 3);
   color: white;
   padding: 5px 14px;
-  cursor: pointer;
-  border: none;
-  background-color: rgb(204, 3, 3);
-}
-.cancel-button:hover {
-  background-color: rgb(217, 41, 41);
-  color: white;
 }
 
-.hidden_form {
+button.cancel-button:hover {
+  background-color: rgb(217, 41, 41);
+}
+
+.hidden-form {
   display: none;
 }
 
-.hidden_form.show {
+.hidden-form.show {
   display: block;
 }
 
-label{
-  padding-left:2% ;
-}
-
-.description {
-  margin-top: -10px;
-}
 label {
   display: inline-block;
   margin-right: 10px;
   margin-bottom: 10px;
   padding-bottom: 10px;
+  text-align: left;
 }
 
 label input[type="radio"] {
-  display: inline-block;
   vertical-align: middle;
-  margin-right: 5px; 
+  margin-right: 5px;
 }
+
+.description {
+  margin-top: -10px;
+}
+

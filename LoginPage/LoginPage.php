@@ -18,7 +18,7 @@ session_start();
   <div class="container">
     <div class="sidebar">
       <div class="header">
-        <img src="AAU logo.png" alt="logo" class="logo">
+        <img src="../images/icons/AAU logo.png" alt="logo" class="logo">
         <div class="title-container">
           <h1 class="title" style="font-size: 33px;">STUDENT-FACULTY</h1>
           <h1 class="title" style="font-size: 26px; margin-top: -10px;">SERVICES</h1>
@@ -46,26 +46,26 @@ session_start();
       </div>
 
     </div>
+
+    <button class="help-button" onclick="toggleHelp()">
+      <img src="../images/icons/question mark.jpg" class="help-icon">
+    </button>
+
+    <div class="modal-container" id="helpModalContainer">
+      <div class="modal-content">
+        <?php include "../HelpModal/help.html"; ?>
+      </div>
+    </div>
+
     <div class="contact-us">
-            <a class="contact" href="mailto:Admin@SFS.com">Contact us</a>
-          </div>
-           <!-- Include the help modal HTML content -->
-<button class="help-button" onclick="toggleHelp()">
-    <img src="../Header/question mark.jpg" class="help-icon">
-</button>
-
-<!-- Add the help modal container with the modal content -->
-<div class="modal-container" id="helpModalContainer">
-    <div class="modal-content">
-    <?php include "../LoginPage/help.html"; ?>
-    <link rel="stylesheet" href="../LoginPage/help.css">
-</div>
-</div>
-
+      <a class="contact" href="mailto:studentfacultyservices@gmail.com">Contact us</a>
+    </div>
+    
+    
     <div class="login-container">
       <h1 class="header-login">LOGIN</h1>
       <p class="login-description">Login using your AAU account</p>
-      <form class="form" action="config.php" method="post">
+      <form class="form" action="handle_login.php" method="post">
         <label class="label">Email</label><br>
         <input class="input" type="email" id="email" name="email" placeholder="example@aau.ac.ae" required><br><br>
         <label class="label">Password</label><br>
@@ -80,8 +80,9 @@ session_start();
         </div>
         <button class="button" id="submit" type="submit">Login</button>
       </form>
-      <h4 class="register-text">Don't have an account? <a href="./RegisterPage.php">Register here.</a></h4>
+      <h4 class="register-text">Don't have an account? <a href="../RegisterPage/RegisterPage.php">Register here.</a></h4>
     </div>
+    
 
   </div>
 
@@ -132,8 +133,6 @@ session_start();
         });
       }, 500); // Adjust the interval between animations as needed
     }
-
-
   </script>
 </body>
 

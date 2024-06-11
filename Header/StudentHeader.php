@@ -1,5 +1,4 @@
 <?php
-
 $conn = new mysqli("localhost", "root", "", "capstone");
 
 if ($conn->connect_error) {
@@ -20,7 +19,7 @@ $stmt->close();
 if ($profile_photo) {
     $profile_photo_path = $profile_photo;
 } else {
-    $profile_photo_path = "../ProfilePage/User icon.png"; // Default photo path
+    $profile_photo_path = "../images/icons/User icon.png"; // Default photo path
 }
 ?>
 
@@ -30,7 +29,6 @@ if ($profile_photo) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
     <link rel="stylesheet" type="text/css" href="../Header/Header.css">
     <script src='../Notifications/notifications.js'></script>
 
@@ -81,7 +79,7 @@ if ($profile_photo) {
                     <div class="search-input-container">
                         <input oninput="searchProfile()" type="search" name="search-profile" class="search-profile search-input" id="search-profile" placeholder="Search for Profiles" list="profile-list">
                         <button onclick="redirectToProfile()" type="button" class="search-button">
-                            <img src="../Header/Search-icon.png" alt="Search Icon" class="search-icon">
+                            <img src="../images/icons/Search-icon.png" alt="Search Icon" class="search-icon">
                         </button>
                     </div>
                 </div>
@@ -163,20 +161,19 @@ if ($profile_photo) {
         function searchProfile() {
             var query = document.getElementById('search-profile').value;
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'SearchProfile.php?query=' + query, true);
+            // Update the path to the actual location of SearchProfile.php
+            xhr.open('GET', '../Header/SearchProfile.php?query=' + query, true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var selectElement = document.getElementById('profile-list');
                     selectElement.innerHTML = xhr.responseText;
                     // Always show the profile list when the user starts typing
                     selectElement.style.display = query.trim() !== '' ? 'block' : 'none'; // Show/hide profile list based on input
-
-
                 }
             };
-
             xhr.send();
         }
+
 
         function redirectToProfile() {
             var selectedProfile = document.getElementById('profile-list').value;

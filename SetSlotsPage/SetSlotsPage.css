@@ -1,6 +1,7 @@
+/* General Styles */
 body::before {
   content: "";
-  background-image: url("../Header/14731376_rm222batch5-mind-03.jpg");
+  background-image: url("../images/backgrounds/14731376_rm222batch5-mind-03.jpg");
   background-size: cover;
   background-attachment: fixed;
   filter: blur(1px);
@@ -17,6 +18,8 @@ body::before {
   background-color: white;
   width: 600px;
   padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .field {
@@ -35,30 +38,21 @@ body::before {
 
 .label {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
   font-size: 20px;
   color: #011638;
+  margin-top: 2%;
 }
-
-.select-style {
-  width: 100%;
-  height: 100%;
-  padding: 5px;
-  background-color: #C7CEDB;
-  border: none;
-  cursor: pointer;
-}
-
-
 
 .select-style,
 .input-style {
   width: 100%;
-  height: 100%;
   padding: 5px;
   background-color: #C7CEDB;
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .heading {
@@ -68,21 +62,19 @@ body::before {
 }
 
 .btn-primary {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  display: block;
+  font-weight: bold;
   background-color: #011638;
   color: white;
-  width: 250px;
-  margin-left: 30%;
+  width: 27%;
   height: 40px;
   font-size: 20px;
-  color: #C7CEDB;
-  padding-top: 8px;
-  font-weight: bold;
   cursor: pointer;
   border: none;
+  border-radius: 5px;
   transition: background-color 0.2s ease;
+  margin: 20px auto;
+  margin-top: 5%;
 }
 
 .btn-primary:hover {

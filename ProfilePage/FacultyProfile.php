@@ -42,63 +42,57 @@ $db->close();
     include "../Header/FacultyHeader.php";
     include "../Chatbot/Chatbot.php";
     date_default_timezone_set('Asia/Dubai');
-    include 'Comment.php';
-    include 'SearchProfile.php';
+    include_once 'comments/handle_comments.php';
 
     $commentsExist = checkCommentsExist($conn, $_SESSION['user_id']);
-   
-   
+
+
     // Fetch the profile photo from the database for the current user
-$db_host = "localhost";
-$db_user = "root";
-$db_password = "";
-$db_name = "capstone";
+    $conn = new mysqli("localhost", "root", "", "capstone");
 
-$conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    $user_id = $_SESSION['user_id'];
 
-$user_id = $_SESSION['user_id'];
+    $select_sql = "SELECT uploads FROM account WHERE account_id = ?";
+    $stmt = $conn->prepare($select_sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->bind_result($profile_photo);
+    $stmt->fetch();
+    $stmt->close();
 
-$select_sql = "SELECT uploads FROM account WHERE account_id = ?";
-$stmt = $conn->prepare($select_sql);
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$stmt->bind_result($profile_photo);
-$stmt->fetch();
-$stmt->close();
-
-// Determine the profile photo path
-if ($profile_photo) {
-    $profile_photo_path = $profile_photo;
-} else {
-    $profile_photo_path = "../ProfilePage/User icon.png"; // Default photo path
-}
-?>
+    // Determine the profile photo path
+    if ($profile_photo) {
+        $profile_photo_path = $profile_photo;
+    } else {
+        $profile_photo_path = "../images/icons/User icon.png"; // Default photo path
+    }
+    ?>
 
 
     <div class="profile-content">
-        <img src="../LoginPage/AAU logo.png" alt="logo" class="logo">
+        <!-- <img src="../LoginPage/AAU logo.png" alt="logo" class="logo"> -->
         <div class="user-details">
             <button class="editProfileBtn" id="editProfileBtn">
-            <img src="../ProfilePage/pen icon.jpg" class="edit_icon-faculty">
-                 </button>
-                 <img src="<?php echo $profile_photo_path; ?>" class="user-photo">
-            
-            <?php echo $_SESSION['user_name']; ?>
-            
+                <img src="../images/icons/pen icon.jpg" class="edit_icon-faculty">
+            </button>
+            <img src="<?php echo $profile_photo_path; ?>" class="user-photo">
 
-<!-- Container for the profile photo upload form -->
-<div id="editProfileFormContainer" style="display: none;">
-    <form action="upload_photo.php" method="post" enctype="multipart/form-data" class="edit-profile-form">
-        <label for="profile_photo" class="edit-profile-label">Upload Profile Photo:</label>
-        <input type="file" name="profile_photo" id="profile_photo" accept="image/*" required class="edit-profile-input"><br>
-        <button type="submit" name="Upload" class="edit-profile-submit-btn">Upload</button>
-        <a href="remove_photo.php" class="edit-profile-remove-btn">Remove</a>
-    </form>
-</div>
+            <?php echo $_SESSION['user_name']; ?>
+
+
+            <!-- Container for the profile photo upload form -->
+            <div id="editProfileFormContainer" style="display: none;">
+                <form action="upload_photo.php" method="post" enctype="multipart/form-data" class="edit-profile-form">
+                    <label for="profile_photo" class="edit-profile-label">Upload Profile Photo:</label>
+                    <input type="file" name="profile_photo" id="profile_photo" accept="image/*" required class="edit-profile-input"><br>
+                    <button type="submit" name="Upload" class="edit-profile-submit-btn">Upload</button>
+                    <button class="remove-button" onclick="removePhoto()">Remove</button>
+                </form>
+            </div>
 
         </div>
 
@@ -162,32 +156,57 @@ if ($profile_photo) {
 
             </form>
         </div>
-        
-    </div>
-    
-        <!-- Include the help modal HTML content -->
-<button class="help-button" onclick="toggleHelp()">
-    <img src="../Header/question mark.jpg" class="help-icon">
-</button>
 
-<!-- Add the help modal container with the modal content -->
-<div class="modal-container" id="helpModalContainer">
-    <div class="modal-content">
-    <?php include "../LoginPage/help.html"; ?>
-    <link rel="stylesheet" href="../LoginPage/help.css">
-</div>
-</div>
+    </div>
+
+    <!-- Include the help modal HTML content -->
+    <button class="help-button" onclick="toggleHelp()">
+        <img src="../images/icons/question mark.jpg" class="help-icon">
+    </button>
+
+    <!-- Add the help modal container with the modal content -->
+    <div class="modal-container" id="helpModalContainer">
+        <div class="modal-content">
+            <?php include "../HelpModal/help.html"; ?>
+        </div>
+    </div>
     <script>
-            // JavaScript to toggle the visibility of the profile photo upload form
-            document.getElementById('editProfileBtn').addEventListener('click', function() {
-                var formContainer = document.getElementById('editProfileFormContainer');
-                if (formContainer.style.display === 'none') {
-                    formContainer.style.display = 'block';
-                } else {
-                    formContainer.style.display = 'none';
-                }
-            });
-        </script>
+        // JavaScript to toggle the visibility of the profile photo upload form
+        document.getElementById('editProfileBtn').addEventListener('click', function() {
+            var formContainer = document.getElementById('editProfileFormContainer');
+            if (formContainer.style.display === 'none') {
+                formContainer.style.display = 'block';
+            } else {
+                formContainer.style.display = 'none';
+            }
+        });
+
+        function removePhoto() {
+            if (confirm("Are you sure you want to remove the photo?")) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "remove_photo.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.status === 'success') {
+                            // Redirect to the appropriate profile page
+                            if (response.user_type === 'student') {
+                                window.location.href = 'StudentProfile.php';
+                            } else if (response.user_type === 'faculty') {
+                                window.location.href = 'FacultyProfile.php';
+                            }
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    }
+                };
+
+                xhr.send();
+            }
+        }
+    </script>
 
 </body>
 

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Code/Chatbot/React-chatbot/static/css/main.c7601f7e.css",
-    "main.js": "/Code/Chatbot/React-chatbot/static/js/main.c2f20fda.js",
+    "main.js": "/Code/Chatbot/React-chatbot/static/js/main.faf29280.js",
     "static/js/453.ed3810f9.chunk.js": "/Code/Chatbot/React-chatbot/static/js/453.ed3810f9.chunk.js",
     "static/media/Web Banner Guide.pdf": "/Code/Chatbot/React-chatbot/static/media/Web Banner Guide.0af0cb7e8913912c56a8.pdf",
     "static/media/User Guide.pdf": "/Code/Chatbot/React-chatbot/static/media/User Guide.ed65bbc68f3633920512.pdf",
@@ -13,11 +13,11 @@
     "static/media/pay-now.png": "/Code/Chatbot/React-chatbot/static/media/pay-now.13e49ea4ae7e7baccd54.png",
     "index.html": "/Code/Chatbot/React-chatbot/index.html",
     "main.c7601f7e.css.map": "/Code/Chatbot/React-chatbot/static/css/main.c7601f7e.css.map",
-    "main.c2f20fda.js.map": "/Code/Chatbot/React-chatbot/static/js/main.c2f20fda.js.map",
+    "main.faf29280.js.map": "/Code/Chatbot/React-chatbot/static/js/main.faf29280.js.map",
     "453.ed3810f9.chunk.js.map": "/Code/Chatbot/React-chatbot/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c7601f7e.css",
-    "static/js/main.c2f20fda.js"
+    "static/js/main.faf29280.js"
   ]
 }
