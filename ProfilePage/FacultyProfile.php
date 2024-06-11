@@ -90,7 +90,7 @@ $db->close();
                     <label for="profile_photo" class="edit-profile-label">Upload Profile Photo:</label>
                     <input type="file" name="profile_photo" id="profile_photo" accept="image/*" required class="edit-profile-input"><br>
                     <button type="submit" name="Upload" class="edit-profile-submit-btn">Upload</button>
-                    <a href="remove_photo.php" class="edit-profile-remove-btn">Remove</a>
+                    <button class="remove-button" onclick="removePhoto()">Remove</button>
                 </form>
             </div>
 
@@ -180,6 +180,32 @@ $db->close();
                 formContainer.style.display = 'none';
             }
         });
+
+        function removePhoto() {
+            if (confirm("Are you sure you want to remove the photo?")) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "remove_photo.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.status === 'success') {
+                            // Redirect to the appropriate profile page
+                            if (response.user_type === 'student') {
+                                window.location.href = 'StudentProfile.php';
+                            } else if (response.user_type === 'faculty') {
+                                window.location.href = 'FacultyProfile.php';
+                            }
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    }
+                };
+
+                xhr.send();
+            }
+        }
     </script>
 
 </body>

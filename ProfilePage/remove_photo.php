@@ -25,6 +25,8 @@ $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 
+$response = ['status' => 'error', 'message' => 'Unknown error'];
+
 if ($row && file_exists($row['uploads'])) {
     unlink($row['uploads']);
 
@@ -36,25 +38,26 @@ if ($row && file_exists($row['uploads'])) {
     if ($update_stmt->execute()) {
         // Update the session variable
         unset($_SESSION['profile_photo']);
-
-        // Redirect based on the user type
-        if ($_SESSION['user_type'] === 'student') {
-            header("Location: StudentProfile.php");
-        } elseif ($_SESSION['user_type'] === 'faculty') {
-            header("Location: FacultyProfile.php");
-        }
-        exit();
+        
+        // Prepare the success response with the user type
+        $response = ['status' => 'success', 'user_type' => $_SESSION['user_type']];
     } else {
         // Log the error if the update fails
         error_log("Update failed: " . $update_stmt->error);
+        $response['message'] = $update_stmt->error;
     }
 
     $update_stmt->close();
 } else {
     // Log the error if no photo is found
     error_log("No photo found for user ID: " . $user_id);
+    $response['message'] = 'No photo found';
 }
 
 $stmt->close();
 $conn->close();
+
+// Send the response as JSON
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
