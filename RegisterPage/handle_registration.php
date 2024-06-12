@@ -36,7 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result_student === TRUE) {
           // Registration successful - Commit transaction
           $db->commit();
-          $_SESSION['user_type'] = 'student'; 
+          $_SESSION['user_type'] = 'student';
+          $_SESSION['user_id'] = $student_id;
+          $_SESSION['user_name'] = $first_name . ' ' . $last_name; 
+          $_SESSION['user_email'] = $email;
           header("Location: http://localhost/Code/ProfilePage/StudentProfile.php");
           exit();
         } else {
@@ -63,7 +66,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result_faculty === TRUE) {
           // Registration successful - Commit transaction
           $db->commit();
-          $_SESSION['user_type'] = 'faculty'; 
+          $_SESSION['user_type'] = 'faculty';
+          $_SESSION['user_id'] = $faculty_id;
+          $_SESSION['user_name'] = $first_name . ' ' . $last_name; 
+          $_SESSION['user_email'] = $email;
           header("Location: http://localhost/Code/ProfilePage/FacultyProfile.php");
           exit();
         } else {
