@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$db = mysqli_connect("localhost", "root", "", "capstone");
+include "../db_connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
