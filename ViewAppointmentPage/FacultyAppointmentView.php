@@ -127,7 +127,7 @@ $db->close();
                     echo "<form class='approval-form' method='post' action='approve_appointment.php'>";
                     echo "<input type='hidden' name='approve_appointment' value='{$appointment['appointment_id']}'>";
                     echo "<label><input type='radio' name='attendance_status' value='attended' required> The student has attended the appointment</label>";
-                    echo "<label><input type='radio' name='attendance_status' value='unattended' required> The student did not attend the appointment</label>";
+                    echo "<label><input type='radio' name='attendance_status' value='unattended' required> The student did NOT attend the appointment</label>";
                     echo "<label>Appointment report: <textarea name='appointment_report' maxlength='350' placeholder='Write a report (optional)'></textarea></label><br>";
                     echo "<button class='Approve-button' type='submit'>Approve Appointment</button>";
                     echo "</form>";

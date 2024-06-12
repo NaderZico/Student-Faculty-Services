@@ -1,4 +1,3 @@
-/* General Styles */
 body::before {
   content: "";
   background-image: url("../images/backgrounds/14731376_rm222batch5-mind-03.jpg");
@@ -55,7 +54,7 @@ table th {
 }
 
 tr:hover {
-  background-color: #bfbfbf;
+  background-color: #ebebeb;
 }
 
 button {
@@ -110,3 +109,64 @@ label input[type="radio"] {
   margin-top: -10px;
 }
 
+/* CSS for the approval form */
+form.approval-form {
+  max-width: 60%;
+  margin: 0 auto;
+  background-color: #f3f3f3;
+  padding: 10px; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form.approval-form label {
+  display: block;
+  margin-bottom: 5px; 
+  font-weight: bold;
+  color: #011638;
+}
+
+form.approval-form label input[type="radio"] {
+  margin-right: 10px;
+}
+
+form.approval-form textarea {
+  width: calc(100% - 20px); 
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: vertical;
+  background-color: #fff;
+  transition: border-color 0.3s;
+  margin-bottom: -25px;
+  margin-top: 10px;
+}
+
+form.approval-form textarea:focus {
+  outline: none;
+  border-color: #13489d;
+}
+
+form.approval-form .Approve-button {
+  background-color: #011638;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 5px; 
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form.approval-form .Approve-button:hover {
+  background-color: #13489d;
+}
+
+form.approval-form tr:hover {
+  background-color: transparent !important;
+}

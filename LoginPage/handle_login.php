@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $row = mysqli_fetch_assoc($result);
 
   if (!empty($row)) {
-    $password_hash = $row['password']; // Get hashed password from database
+    $password_hash = $row['password'];
 
     if (password_verify($password, $password_hash)) {
       // Password matches - Login successful

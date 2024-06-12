@@ -26,7 +26,7 @@ session_start();
       </div>
       <span class="main-title">Get Quick</span><br>
       <span class="main-title" style="font-weight: bold;">Support Services</span><br><br>
-      <span class="main-question" id="mainQuestion">What can you do<span class="dot" id="dot1">.</span><span class="dot" id="dot2">.</span><span class="dot" id="dot3">.</span></span>
+      <span class="main-question" id="mainQuestion">What you can do<span class="dot" id="dot1">.</span><span class="dot" id="dot2">.</span><span class="dot" id="dot3">.</span></span>
 
       <div class="question-answer-container">
         <div class="question-answer">

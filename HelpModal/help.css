@@ -8,7 +8,8 @@
   cursor: pointer;
   font-weight: bold;
   background-color: transparent;
-  bottom: 3%;
+  bottom: 2%;
+  left: 2%;
 }
 
 .help-icon {
@@ -16,6 +17,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .modal {
@@ -33,12 +35,27 @@
 .modal-content {
   background-color: #fefefe;
   position: absolute;
-  margin: 5% auto;
+  margin: auto; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
   padding: 20px;
   border: 1px solid #888;
-  width: 70%;
+  width: 60%;
   height: 70%;
-  left: 13%;
+  animation-name: slideInFromTop;
+  animation-duration: 0.5s;
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
 }
 
 .modal-container {
@@ -52,12 +69,18 @@
   display: none;
 }
 
+
 .close {
   color: #aaa;
-  float: right;
+  position: absolute;
+  top: 5px;  
+  right: 10px; 
   font-size: 28px;
   font-weight: bold;
+  z-index: 9999;
+  cursor: pointer;
 }
+
 
 .close:hover,
 .close:focus {
@@ -79,10 +102,10 @@
 }
 
 .help-image {
-  width: 60%;
-  height: 70%;
+  max-width: 70%;
+  height: auto;
   position: relative;
-  margin-left: 20%;
+  margin-left: 15%;
 }
 
 .prev-button {

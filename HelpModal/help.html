@@ -50,7 +50,7 @@
       <h2>Book an appointment.</h2>
       <p> </p>
       <img src="../images/Help/3.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -59,7 +59,7 @@
       <h2>View your appointment.</h2>
       <p> </p>
       <img src="../images/Help/4.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -68,7 +68,7 @@
       <h2>Rate your appointment.</h2>
       <p> </p>
       <img src="../images/Help/5.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -87,7 +87,7 @@
       <h2>Instructor profile </h2>
       <p> </p>
       <img src="../images/Help/8.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -96,7 +96,7 @@
       <h2>Set slots</h2>
       <p> </p>
       <img src="../images/Help/9.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -105,7 +105,7 @@
       <h2>View slots</h2>
       <p> </p>
       <img src="../images/Help/10.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -114,7 +114,7 @@
       <h2>View appointment.</h2>
       <p> </p>
       <img src="../images/Help/11.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -131,7 +131,7 @@
       <h2>Use our Chatbot.</h2>
       <p> </p>
       <img src="../images/Help/12.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -140,7 +140,7 @@
       <h2>Get courses info.</h2>
       <p> </p>
       <img src="../images/Help/13.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -149,7 +149,7 @@
       <h2>Get faculty info</h2>
       <p> </p>
       <img src="../images/Help/14.png" alt="Description of the image" class="help-image">
-      h
+
     </div>
     <div class="slide">
       <img src="../images/icons/PreArrow.jpg" class="prev-arrow" onclick="prevSlide()">
@@ -166,20 +166,24 @@
 
     function toggleHelp() {
       var modalContainer = document.getElementById("helpModalContainer");
-      if (modalContainer.style.display === "none") {
+      var modalContent = document.getElementsByClassName("modal-content");
+      if (modalContainer.style.display === "none" || modalContainer.style.display === "") {
         modalContainer.style.display = "block";
+        modalContent.classList.add("active");
       } else {
         modalContainer.style.display = "none";
+        modalContent.classList.remove("active");
       }
     }
 
-    // Close help modal
+
     function closeHelp() {
       var modalContainer = document.getElementById("helpModalContainer");
       modalContainer.style.display = "none";
+      modalContent.classList.remove("active");
     }
 
-    // Slide navigation
+
     var slideIndex = 1;
     showSlide(slideIndex);
 
