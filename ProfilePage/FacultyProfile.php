@@ -21,7 +21,6 @@ $avg_engaging = $row['avg_engaging'];
 $avg_insightful = $row['avg_insightful'];
 $appointment_count = $row['appointment_count'];
 
-// Close the database connection
 $db->close();
 ?>
 
@@ -79,7 +78,7 @@ $db->close();
             </button>
             <img src="<?php echo $profile_photo_path; ?>" class="user-photo">
 
-            <?php echo $_SESSION['user_name']; ?>
+            <h2 class="faculty-user-name"><?php echo $_SESSION['user_name']; ?></h2>
 
 
             <!-- Container for the profile photo upload form -->

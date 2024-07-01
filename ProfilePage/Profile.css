@@ -15,12 +15,14 @@ body::before {
 
 body {
   overflow-x: hidden;
-  margin-top: 0; 
+  margin-top: 0;
 }
 
-
-.header{
+.header {
   position: fixed;
+  width: 100%; /* Added for consistency */
+  top: 0;
+  z-index: 10; /* Added to ensure the header is on top */
 }
 
 .logo {
@@ -37,38 +39,72 @@ body {
   margin-left: 7%;
   margin-top: 1%;
   position: relative;
-  width: 70%;
+  width: 60%; /* Consolidated width declaration */
   height: 40%;
   border-radius: 10px;
-  width: 60%;
+}
+
+.user-photo, .user-photo-student, .user-photo-view {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  margin-bottom: 10%; /* Consolidated margin-bottom for consistency */
+}
+
+.profile-type, .profile-type-faculty {
+  margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+h2.profile-type {
+  margin-top: 0;
+  margin-bottom: -3%;
+}
+
+.user-photo {
+  margin-top: -114%;
 }
 
 .user-photo-student {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: white;
-  margin-bottom: 10%;
-  margin-top: -55%;
+  margin-top: -15%;
 }
 
-.user-photo{
-  margin-top: -114%;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: white;
-  margin-bottom: 20%;
+.user-photo-view {
+  margin-top: 15%;
+}
+
+.personal-details-faculty, .personal-details-student, .personal-details-view-student, .personal-details-view-faculty {
+  display: inline-block;
+  margin-left: 20%;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-top: 5%;
+  line-height: 1.2;
+}
+
+.personal-details-student {
+  margin-top: 3%;
+  margin-left: 5%;
+  line-height: 1.5;
 }
 
 .personal-details-faculty {
-  display: inline-block;
   margin-left: 10%;
+  margin-top: 3%;
   font-size: 1.2rem;
 }
 
-.personal-details-content-faculty {
-  float: left;
+.personal-details-view-faculty {
+  margin-left: 15%;
+}
+
+.personal-details-content-faculty, .personal-details-content-student {
+  text-align: left; 
+  width: 100%; 
+  font-size: 1.2rem;
+  margin-top: 3.5%;
 }
 
 .user-details {
@@ -78,38 +114,33 @@ body {
   text-align: center;
   font-size: large;
   font-weight: bold;
-  margin-top: 0;
+  margin-top: 1%;
   padding: 0;
+  margin-bottom: 5%;
 }
 
-.comment-section-faculty {
+.comment-section-faculty, .comment-section-student, .comment-section-view {
   display: block;
   margin: auto;
   width: 95%;
   max-height: 50vh;
 }
 
-.personal-details-content-student {
-  text-align: left;
-}
-
-.personal-details-student {
-  display: inline-block;
+h2 {
   font-size: 1.2rem;
-  padding-bottom: 5px;
-  margin-left: 10%;
+  font-weight: bold;
+  margin-top: 0;
 }
 
-.profile-type {
-  margin-bottom: auto;
+.faculty-user-name {
+  margin-top: -3%;
 }
 
-.comment-section-student {
-  position: relative;
-  display: flex;
-  margin-top: 1%;
-  margin-left: 2.5%;
-  max-height: 50vh;
+.comment-section-view {
+  min-height: 15vh;
+  max-height: 65vh;
+  margin: 7% 18px 0 9px;
+  padding: 20px;
 }
 
 .comment-input-container {
@@ -118,10 +149,8 @@ body {
   align-items: stretch;
   width: 70vw;
   border: 1px solid #cdcdcd;
-  margin-top: 4%;
-  margin-bottom: 1.6%;
+  margin: 4% 0 1.6% -0.35%;
   background-color: white;
-  margin-left: -0.35%;
   padding: 5px;
 }
 
@@ -150,8 +179,7 @@ body {
   width: 10%;
 }
 
-.comment-button:hover,
-.comment-button:focus {
+.comment-button:hover, .comment-button:focus {
   background-color: #001454;
   color: white;
 }
@@ -202,82 +230,27 @@ body {
   color: #898989;
 }
 
-.user-photo-view {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: white;
-  margin-bottom: 10%;
-  margin-top: 15%;
-}
-
-.profile-type {
-  margin-bottom: auto;
-  white-space: nowrap;
-}
-
-.personal-details-view-student,
-.personal-details-view-faculty {
-  font-size: 1.2rem;
-  padding-bottom: 5px;
-  margin-left: 20%;
-  margin-top: 5%;
-  width: 100%;
-  line-height: 1.5;
-}
-
-.personal-details-view-faculty {
-  margin-left: 15%;
-}
-
-.comment-section-view {
-  min-height: 15vh;
-  max-height: 65vh;
-  width: 95%;
-  margin: 7% 18px 0 9px;
-  padding: 20px;
-}
-
-.comment-list ,.comment-list-student ,.comment-list-faculty {
+.comment-list, .comment-list-student, .comment-list-faculty {
   left: 5px;
   padding: 5px;
   overflow-y: auto;
-  overflow-x:hidden;
-  /* width: calc(100% - 300px); */
+  overflow-x: hidden;
   width: 70vw;
   max-height: 50vh;
   margin-top: -2%;
   background-color: #00145410;
 }
 
-.comment-list-student{
+.comment-list-student, .comment-list-faculty {
   margin-top: 8%;
 }
 
-.comment-list-faculty{
-  margin-top: 8%;
-  margin-bottom: -3%;
-}
-
-.comment-form-student {
-  text-align: center;
-  /* margin-top: 1%; */
-  position: sticky;
-  background-color: #c7cedb;
-  z-index: 1;
-  padding: 30px 5px 5px 5px;
-  background-color: transparent;
-  border-radius: 7px;
-  margin: 0;
-}
-
-.comment-form{
+.comment-form-student, .comment-form {
   text-align: center;
   position: sticky;
-  background-color: #c7cedb;
-  z-index: 1;
-  padding: 5px;
   background-color: transparent;
+  z-index: 1;
+  padding: 5px 5px 5px 5px; /* Consolidated padding for consistency */
   border-radius: 7px;
   margin: 0;
 }
@@ -303,23 +276,22 @@ ul.content-comment-list {
 }
 
 .delete-button {
-color: white;
+  color: white;
   padding: 3px 12px;
   cursor: pointer;
-  border: 2px solid rgb(234, 18, 18) ;
+  border: 2px solid rgb(234, 18, 18);
   background-color: rgb(234, 18, 18);
   border-radius: 20px;
 }
 
 .delete-button:hover {
   background-color: rgb(246, 74, 74);
-  color: white;
-  border: 2px solid rgb(246, 74, 74) ;
+  border-color: rgb(246, 74, 74);
 }
 
 #editProfileFormContainer {
   z-index: 9;
-  position: absolute; 
+  position: absolute;
   margin-top: 33%;
   background-color: white;
   width: 250px;
@@ -334,10 +306,10 @@ color: white;
   background: transparent;
   padding: 0;
   z-index: 9;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
-.edit_icon ,.edit_icon-faculty{
+.edit_icon, .edit_icon-faculty {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -345,7 +317,7 @@ color: white;
   margin-left: 60%;
 }
 
-.edit_icon-faculty{
+.edit_icon-faculty {
   margin-bottom: 99%;
 }
 
@@ -393,9 +365,8 @@ color: white;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
-  text-decoration: none;
   transition: background-color 0.3s;
-  width:100px;
+  width: 100px;
   height: 38px;
 }
 
@@ -403,52 +374,46 @@ color: white;
   background-color: #bd2130;
 }
 
-.edit-button{
+.edit-button, .save-button, .cancel-button {
   color: white;
   padding: 3px 12px;
   cursor: pointer;
-  border: 2px solid rgb(7, 50, 191) ;
-  background-color: rgb(7, 50, 191);
   border-radius: 20px;
   margin-right: 2px;
+}
+
+.edit-button {
+  border: 2px solid rgb(7, 50, 191);
+  background-color: rgb(7, 50, 191);
 }
 
 .edit-button:hover {
-  border: 2px solid rgb(70, 108, 234);
+  border-color: rgb(70, 108, 234);
   background-color: rgb(70, 108, 234);
 }
 
-.save-button{
-  color: white;
-  padding: 3px 12px;
-  cursor: pointer;
-  border: 2px solid rgb(0, 115, 52) ;
+.save-button {
+  border: 2px solid rgb(0, 115, 52);
   background-color: rgb(0, 115, 52);
-  border-radius: 20px;
-  margin-right: 2px;
-  margin-top: 2px;
+  margin-top: 2px; /* Consolidated margin-top for consistency */
 }
 
 .save-button:hover {
-  border: 2px solid rgb(50, 150, 95);
+  border-color: rgb(50, 150, 95);
   background-color: rgb(50, 150, 95);
 }
 
 .cancel-button {
-  color: white;
-    padding: 3px 12px;
-    cursor: pointer;
-    border: 2px solid rgb(234, 18, 18) ;
-    background-color: rgb(234, 18, 18);
-    border-radius: 20px;
-    margin-top: 2px;
+  border: 2px solid rgb(234, 18, 18);
+  background-color: rgb(234, 18, 18);
+  margin-top: 2px; /* Consolidated margin-top for consistency */
 }
 
 .cancel-button:hover {
-    background-color: rgb(246, 74, 74);
-    color: white;
-    border: 2px solid rgb(246, 74, 74) ;
+  background-color: rgb(246, 74, 74);
+  border-color: rgb(246, 74, 74);
 }
+
 
 @media (max-width: 700px) {
   .header {
@@ -501,7 +466,9 @@ color: white;
     width: 90%; 
     margin-left: 0; 
     text-align: center; 
+    font-size: 1.2rem;
   }
+
 
   .circular-container {
     justify-content: center; 

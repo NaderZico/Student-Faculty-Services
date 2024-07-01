@@ -122,7 +122,7 @@ function fetchFacultyRatings($conn, $profile_id)
                 echo '<img src="../images/icons/User icon.png" class="user-photo-view" alt="Profile Photo">';
             }
             ?>
-            <h2><?php echo $userDetails['first_name'] . ' ' . $userDetails['last_name']; ?></h2>
+            <h2 class="user-name"><?php echo $userDetails['first_name'] . ' ' . $userDetails['last_name']; ?></h2>
         </div>
 
         <!-- Personal details section -->
