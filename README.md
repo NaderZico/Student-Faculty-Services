@@ -18,6 +18,9 @@ An account registration feature has been added to allow anyone to use the websit
 - Improved file structure
 - Improved scalability and design of forms and tables
 
+### Update 3
+- Added responsive design for smaller screens like tablets and phones in portrait mode.
+
 ----------------------------------------------------------------------------------------
 ## Login Page
 ![Login Page](/images/login-page.png)
