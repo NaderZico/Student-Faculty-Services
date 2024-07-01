@@ -23,7 +23,7 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 14%;
+  height: auto;
   background-color: var(--main-color);
   transition: 0.2s;
   max-width: 1800px;
@@ -432,4 +432,110 @@ option {
 
 hr {
   margin-top: 14px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 992px) {
+  .web-header {
+    flex-wrap: wrap; 
+  }
+
+  .web-header-left {
+    width: 80%; 
+    justify-content: flex-start; 
+    order: 1; 
+  }
+
+  .web-icon {
+    margin-right: auto; 
+  }
+
+  .search-wrapper {
+    width: calc(100% - 50px); 
+    order: 2;
+    padding: 0 25px; 
+  }
+
+  .web-name-container {
+    width: 100%; 
+    order: 3; 
+    padding: 10px 0; 
+  }
+
+  .web-header-right {
+    width: 20%; 
+    justify-content: flex-end; 
+    order: 4; 
+  }
+
+  .notification-btn, .bell-icon {
+    margin-left: auto; 
+  }
+
+  .notification-dropdown {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .web-container {
+    font-size: 20px;
+  }
+
+  .web-name {
+    font-size: 18px;
+  }
+
+  .web-services {
+    font-size: 12px;
+  }
+
+  .bell-icon,
+  .search-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .notification-dropdown {
+    width: 35vw;
+  }
+
+  .notification p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .web-header {
+    padding: 10px;
+  }
+
+  .web-name {
+    font-size: 16px;
+  }
+
+  .line {
+    width: 20px;
+    height: 2px;
+  }
+
+  .bell-icon {
+    width: 20px;
+  }
+  
+  .unread-count {
+    width: 5px;
+  }
+
+  .search-input {
+    width: 100px;
+  }
+
+  .notification-dropdown {
+    width: 40vw;
+  }
+
+  .notification p {
+    font-size: 0.65rem;
+  }
 }

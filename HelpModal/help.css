@@ -35,14 +35,13 @@
 .modal-content {
   background-color: #fefefe;
   position: absolute;
-  margin: auto; 
-  top: 50%; 
-  left: 50%; 
+  margin: auto;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
   border: 1px solid #888;
-  width: 60%;
-  height: 70%;
+  max-width: 100%;
   animation-name: slideInFromTop;
   animation-duration: 0.5s;
 }
@@ -69,18 +68,16 @@
   display: none;
 }
 
-
 .close {
   color: #aaa;
   position: absolute;
-  top: 5px;  
-  right: 10px; 
+  top: 1rem;
+  right: 1rem;
   font-size: 28px;
   font-weight: bold;
   z-index: 9999;
   cursor: pointer;
 }
-
 
 .close:hover,
 .close:focus {
@@ -102,10 +99,10 @@
 }
 
 .help-image {
-  max-width: 70%;
+  max-width: 80%;
   height: auto;
   position: relative;
-  margin-left: 15%;
+  margin-left: 10%;
 }
 
 .prev-button {
@@ -119,22 +116,6 @@
   right: 5%;
   bottom: 5%;
 }
-
-.contact-us {
-  position: absolute;
-  bottom: 30px;
-  transform: translateX(-50%);
-  left: 10%;
-  z-index: 99;
-
-}
-
-.contact {
-  color: #011638;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 
 .prev-arrow,
 .next-arrow {
@@ -152,4 +133,41 @@
 
 .next-arrow {
   right: -1%;
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+  .help-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    bottom: 5vh;
+    left: 5vw;
+  }
+
+  .help-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .modal-content {
+    width: 90%;
+    height: auto;
+    max-height: 90vh;
+  }
+
+  .help-image {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .prev-button, .next-button {
+    bottom: 10%;
+  }
+
+  .prev-arrow, .next-arrow {
+    width: 25px;
+    height: 25px;
+  }
+
 }

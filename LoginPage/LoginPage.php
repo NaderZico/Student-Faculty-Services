@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php
 include "../Chatbot/Chatbot.php";
 session_start();

@@ -1,5 +1,3 @@
-<title>Faculty Profile</title>
-
 <?php
 session_start();
 
