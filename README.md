@@ -39,8 +39,6 @@ An account registration feature has been added to allow anyone to use the websit
 
 -----------------------------------
 
------------------------------------
-
 ## Tech stack
 - Frontend: React, HTML5, CSS3
 - Backend: PHP
@@ -56,9 +54,3 @@ An account registration feature has been added to allow anyone to use the websit
 2. Create a MySQL database and import the schema used by `db_connection.php`.
 3. Update the connection details in `db_connection.php`.
 4. Open the site through your local server.
-
-## What I learned
-- Designing a relational schema and clean PHP endpoints
-- Protecting inputs and managing sessions
-- Building reusable React components and a helper chatbot
-- Verifying permissions and authentication with white-box and black-box testing
