@@ -38,3 +38,27 @@ An account registration feature has been added to allow anyone to use the websit
 ![Appointment management page](/images/view-appointments-page.png)
 
 -----------------------------------
+
+-----------------------------------
+
+## Tech stack
+- Frontend: React, HTML5, CSS3
+- Backend: PHP
+- Database: MySQL
+- Chatbot: React-chatbot-kit
+
+## Project structure
+- `LoginPage`, `RegisterPage`, `ProfilePage`, `BookAppointmentPage`, `ViewAppointmentPage`, `SetSlotsPage`, `RatingPage`, `Notifications`, `Header`, `HelpModal`, `Chatbot`
+- `db_connection.php` handles the database connection
+
+## Setup
+1. Serve the project with a PHP/MySQL stack (for example XAMPP or MAMP).
+2. Create a MySQL database and import the schema used by `db_connection.php`.
+3. Update the connection details in `db_connection.php`.
+4. Open the site through your local server.
+
+## What I learned
+- Designing a relational schema and clean PHP endpoints
+- Protecting inputs and managing sessions
+- Building reusable React components and a helper chatbot
+- Verifying permissions and authentication with white-box and black-box testing
